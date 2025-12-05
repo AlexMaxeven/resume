@@ -118,21 +118,21 @@ const Contact = () => {
           <h2 className={styles.sectionTitle}>Контакти</h2>
           
           <div className={styles.contactGrid}>
-            <a href="mailto:ax.zaverukha@gmail.com" className={styles.contactCard}>
+            <div className={styles.contactCard}>
               <div className={styles.contactIcon}>📧</div>
               <div className={styles.contactInfo}>
                 <span className={styles.contactLabel}>Email</span>
-                <span className={styles.contactValue}>ax.zaverukha@gmail.com</span>
+                <span className={styles.contactValue}>ax.zaver****@gmail.com</span>
               </div>
-            </a>
+            </div>
 
-            <a href="tel:+380630342168" className={styles.contactCard}>
+            <div className={styles.contactCard}>
               <div className={styles.contactIcon}>📞</div>
               <div className={styles.contactInfo}>
                 <span className={styles.contactLabel}>Телефон</span>
-                <span className={styles.contactValue}>063 034 21 68</span>
+                <span className={styles.contactValue}>063 034 ** **</span>
               </div>
-            </a>
+            </div>
 
             <div className={styles.contactCard}>
               <div className={styles.contactIcon}>📍</div>

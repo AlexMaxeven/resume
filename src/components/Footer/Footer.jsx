@@ -16,8 +16,8 @@ const Footer = () => {
             <div className={styles.column}>
               <h4 className={styles.title}>Контакти</h4>
               <ul className={styles.list}>
-                <li><a href="mailto:ax.zaverukha@gmail.com">ax.zaverukha@gmail.com</a></li>
-                <li><a href="tel:+380630342168">063 034 21 68</a></li>
+                <li>ax.zaver****@gmail.com</li>
+                <li>063 034 ** **</li>
                 <li>Київ, Україна</li>
               </ul>
             </div>

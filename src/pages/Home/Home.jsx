@@ -38,11 +38,11 @@ const Home = () => {
                 </div>
                 <div className={styles.contactItem}>
                   <span className={styles.contactIcon}>📧</span>
-                  <a href="mailto:ax.zaverukha@gmail.com">ax.zaverukha@gmail.com</a>
+                  <span>ax.zaver****@gmail.com</span>
                 </div>
                 <div className={styles.contactItem}>
                   <span className={styles.contactIcon}>📞</span>
-                  <a href="tel:+380630342168">063 034 21 68</a>
+                  <span>063 034 ** **</span>
                 </div>
                 <div className={styles.contactItem}>
                   <span className={styles.contactIcon}>🎂</span>
