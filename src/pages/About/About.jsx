@@ -1,17 +1,18 @@
 import { motion } from 'framer-motion';
 import styles from './About.module.css';
 import Particles from '../../components/Particles/Particles';
+import MagicBento from '../../components/MagicBento/MagicBento';
 
 const About = () => {
   const skillCategories = [
-    { icon: '⚛️', title: 'Frontend', list: 'React.js, JavaScript (ES6+), HTML5, CSS3, Tailwind, Vite, Redux, jQuery, PHP' },
-    { icon: '🔗', title: 'Інтеграції', list: 'Binom, Keitaro, Ecco, StatCounter, Google Analytics' },
-    { icon: '🛡️', title: 'Захист коду', list: 'Мініфікація, обфускація, контроль середовищ збірки' },
-    { icon: '🌐', title: 'Network / DevOps', list: 'MikroTik RouterOS, WireGuard, L2TP/IPsec, DHCP, Failover, Firewall, маршрутизація, Netwatch, VPS-сервера, Mangle-правила, EIOP' },
-    { icon: '📡', title: 'Мережеві технології', list: 'Налаштування оптичних каналів, статичних провайдерів, резервування з\'єднань, балансування трафіку' },
-    { icon: '🛰️', title: 'Starlink', list: 'Первинна активація, налаштування додатку та інтеграція зі шлюзами' },
-    { icon: '🔧', title: 'Обладнання', list: 'MikroTik, TP-Link, Netis, Huawei, Starlink, Motorola, Garmin GPSMAP / Montana' },
-    { icon: '🔐', title: 'Безпека', list: 'Kali Linux, DOMPurify, базова веб-захист (XSS, CSRF)' }
+    { icon: '⚛️', title: 'Frontend', description: 'React.js, JavaScript (ES6+), HTML5, CSS3, Tailwind, Vite, Redux, jQuery, PHP' },
+    { icon: '🔗', title: 'Інтеграції', description: 'Binom, Keitaro, Ecco, StatCounter, Google Analytics' },
+    { icon: '🛡️', title: 'Захист коду', description: 'Мініфікація, обфускація, контроль середовищ збірки' },
+    { icon: '🌐', title: 'Network / DevOps', description: 'MikroTik RouterOS, WireGuard, L2TP/IPsec, DHCP, Failover, Firewall, маршрутизація, Netwatch, VPS-сервера' },
+    { icon: '📡', title: 'Мережеві технології', description: 'Налаштування оптичних каналів, статичних провайдерів, резервування з\'єднань, балансування трафіку' },
+    { icon: '🛰️', title: 'Starlink', description: 'Первинна активація, налаштування додатку та інтеграція зі шлюзами' },
+    { icon: '🔧', title: 'Обладнання', description: 'MikroTik, TP-Link, Netis, Huawei, Starlink, Motorola, Garmin GPSMAP / Montana' },
+    { icon: '🔐', title: 'Безпека', description: 'Kali Linux, DOMPurify, базова веб-захист (XSS, CSRF)' }
   ];
 
   const jobs = [
@@ -103,33 +104,26 @@ const About = () => {
             Технічні навички
           </motion.h2>
           
-          <div className={styles.skillsGrid}>
-            {skillCategories.map((skill, index) => (
-              <motion.div 
-                key={index}
-                className={styles.skillCategory}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ 
-                  duration: 0.5, 
-                  delay: index * 0.08,
-                  ease: [0.25, 0.1, 0.25, 1]
-                }}
-                whileHover={{ 
-                  scale: 1.02,
-                  transition: { duration: 0.2 }
-                }}
-              >
-                <h3 className={styles.skillCategoryTitle}>
-                  <span className={styles.skillIcon}>{skill.icon}</span>
-                  {skill.title}
-                </h3>
-                <p className={styles.skillList}>{skill.list}</p>
-                <div className={styles.skillGlow}></div>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <MagicBento
+              cards={skillCategories}
+              textAutoHide={true}
+              enableStars={true}
+              enableSpotlight={true}
+              enableBorderGlow={true}
+              enableTilt={true}
+              enableMagnetism={true}
+              clickEffect={true}
+              spotlightRadius={300}
+              particleCount={10}
+              glowColor="45, 212, 191"
+            />
+          </motion.div>
         </div>
       </section>
 
