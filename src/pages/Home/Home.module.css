@@ -233,47 +233,6 @@
   padding: 5rem 0;
 }
 
-.skillsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 0.5rem;
-}
-
-.skillCard {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-  padding: 2rem;
-  transition: all 0.3s ease;
-}
-
-.skillCard:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(45, 212, 191, 0.2);
-  transform: translateY(-4px);
-}
-
-.skillIcon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.skillTitle {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-
-.skillText {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.5);
-}
-
 @media (max-width: 768px) {
   .hero {
     padding: 3rem 0;
@@ -426,29 +385,5 @@
 
   .skills {
     padding: 2rem 0;
-  }
-
-  .skillsGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .skillCard {
-    padding: 1.25rem;
-    border-radius: 12px;
-  }
-
-  .skillIcon {
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .skillTitle {
-    font-size: 1rem;
-    margin-bottom: 0.35rem;
-  }
-
-  .skillText {
-    font-size: 0.85rem;
   }
 }

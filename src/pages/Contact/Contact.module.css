@@ -79,6 +79,7 @@
 }
 
 .eduCard {
+  position: relative;
   display: flex;
   align-items: flex-start;
   gap: 1.25rem;
@@ -86,12 +87,30 @@
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .eduCard:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(45, 212, 191, 0.2);
+  border-color: rgba(45, 212, 191, 0.3);
+}
+
+.eduCard:hover .eduGlow {
+  opacity: 1;
+}
+
+.eduGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    300px circle at 50% 50%,
+    rgba(45, 212, 191, 0.1),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .eduIcon {
@@ -126,6 +145,7 @@
 }
 
 .devCard {
+  position: relative;
   display: flex;
   align-items: flex-start;
   gap: 1rem;
@@ -133,6 +153,30 @@
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.devCard:hover {
+  border-color: rgba(45, 212, 191, 0.2);
+}
+
+.devCard:hover .devGlow {
+  opacity: 1;
+}
+
+.devGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    300px circle at 50% 50%,
+    rgba(45, 212, 191, 0.08),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .devIcon {
@@ -174,11 +218,12 @@
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .langCard:hover {
   background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(45, 212, 191, 0.2);
+  border-color: rgba(45, 212, 191, 0.3);
 }
 
 .langFlag {
@@ -241,6 +286,13 @@
   background: rgba(45, 212, 191, 0.1);
   border: 1px solid rgba(45, 212, 191, 0.2);
   border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.qualTag:hover {
+  background: rgba(45, 212, 191, 0.2);
+  border-color: rgba(45, 212, 191, 0.4);
 }
 
 /* Contact Section */
@@ -256,6 +308,7 @@
 }
 
 .contactCard {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -264,13 +317,30 @@
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .contactCard:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(45, 212, 191, 0.25);
-  transform: translateY(-2px);
+  border-color: rgba(45, 212, 191, 0.3);
+}
+
+.contactCard:hover .contactGlow {
+  opacity: 1;
+}
+
+.contactGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    250px circle at 50% 50%,
+    rgba(45, 212, 191, 0.12),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .contactIcon {
@@ -301,10 +371,6 @@
   font-size: 0.95rem;
   font-weight: 500;
   color: #fff;
-}
-
-a.contactCard:hover .contactValue {
-  color: #2dd4bf;
 }
 
 @media (max-width: 768px) {
