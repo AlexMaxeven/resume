@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import styles from './Home.module.css';
 import alexPhoto from '../../assets/alex.png';
 import MagicBento from '../../components/MagicBento/MagicBento';
-import LiquidEther from '../../components/LiquidEther/LiquidEther';
+import Particles from '../../components/Particles/Particles';
 
 const Home = () => {
   const skills = [
@@ -47,24 +47,17 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-      {/* Liquid Ether Background */}
-      <div className={styles.liquidBg}>
-        <LiquidEther
-          colors={['#2dd4bf', '#14b8a6', '#0d9488']}
-          mouseForce={20}
-          cursorSize={100}
-          isViscous={false}
-          viscous={30}
-          iterationsViscous={32}
-          iterationsPoisson={32}
-          resolution={0.5}
-          isBounce={false}
-          autoDemo={true}
-          autoSpeed={0.5}
-          autoIntensity={2.2}
-          takeoverDuration={0.25}
-          autoResumeDelay={3000}
-          autoRampDuration={0.6}
+      {/* Particles Background */}
+      <div className={styles.particlesBg}>
+        <Particles
+          particleColors={['#2dd4bf', '#14b8a6', '#0d9488', '#ffffff']}
+          particleCount={200}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
         />
       </div>
 
