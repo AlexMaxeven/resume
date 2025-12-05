@@ -27,11 +27,13 @@
   font-family: 'Playfair Display', serif;
   font-size: 1.75rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #2dd4bf 0%, #14b8a6 50%, #0d9488 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #2dd4bf;
   letter-spacing: 0.02em;
+}
+
+.logoText :global(.split-char) {
+  display: inline-block;
+  color: #2dd4bf;
 }
 
 .nav {
@@ -129,6 +131,10 @@
     font-size: 1.5rem;
   }
 
+  .logoText :global(.split-char) {
+    color: #2dd4bf;
+  }
+
   .burger {
     display: flex;
   }
@@ -184,6 +190,10 @@
 
   .logoText {
     font-size: 1.25rem;
+  }
+
+  .logoText :global(.split-char) {
+    color: #2dd4bf;
   }
 
   .nav {

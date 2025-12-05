@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
+import SplitText from '../SplitText/SplitText';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +18,20 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <NavLink to="/" className={styles.logo} onClick={closeMenu}>
-          <span className={styles.logoText}>O.Zaverukha</span>
+          <SplitText
+            text="O.Zaverukha"
+            className={styles.logoText}
+            delay={80}
+            duration={0.5}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 20 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="0px"
+            textAlign="left"
+            tag="span"
+          />
         </NavLink>
 
         <button 
