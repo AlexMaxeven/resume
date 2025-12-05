@@ -6,7 +6,7 @@ import Contact from './pages/Contact/Contact';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/resume">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
