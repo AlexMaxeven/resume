@@ -61,7 +61,14 @@
 /* Skills Section */
 .skills {
   padding: 4rem 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.4) 10%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.4) 90%,
+    rgba(0, 0, 0, 0) 100%
+  );
   position: relative;
   z-index: 1;
 }
@@ -151,7 +158,14 @@
 /* Experience Section */
 .experience {
   padding: 4rem 0 5rem;
-  background: rgba(10, 10, 15, 0.8);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.4) 10%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.4) 90%,
+    rgba(0, 0, 0, 0) 100%
+  );
   position: relative;
   z-index: 1;
 }
