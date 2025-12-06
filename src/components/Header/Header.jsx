@@ -1,10 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 import SplitText from '../SplitText/SplitText';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Блокуємо скрол сторінки, коли меню відкрито
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    }
+
+    // Очищаємо при розмонтуванні
+    return () => {
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -71,6 +88,24 @@ const Header = () => {
             onClick={closeMenu}
           >
             Освіта
+          </NavLink>
+          <NavLink 
+            to="/kali" 
+            className={({ isActive }) => 
+              isActive ? `${styles.link} ${styles.linkActive}` : styles.link
+            }
+            onClick={closeMenu}
+          >
+            Kali
+          </NavLink>
+          <NavLink 
+            to="/psychology" 
+            className={({ isActive }) => 
+              isActive ? `${styles.link} ${styles.linkActive}` : styles.link
+            }
+            onClick={closeMenu}
+          >
+            Психологія
           </NavLink>
         </nav>
       </div>
