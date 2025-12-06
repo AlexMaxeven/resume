@@ -271,7 +271,6 @@ npm run deploy
 **Олександр Заверюха**
 - Frontend Developer / Team Lead
 - IT & Network Specialist
-- Email: ax.zaverukha@gmail.com
 
 ---
 
