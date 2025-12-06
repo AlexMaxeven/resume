@@ -1,16 +1,278 @@
-# React + Vite
+# 💼 Резюме-сайт Олександра Заверюхи
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Сучасний інтерактивний веб-сайт-резюме з анімаціями та захистом від XSS/CSRF атак.
 
-Currently, two official plugins are available:
+## 🎯 Опис проекту
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Персональний сайт-резюме, що демонструє:
+- **Професійний досвід** у Frontend розробці, MikroTik мережах та кібербезпеці
+- **Технічні навички** через інтерактивні компоненти
+- **Сучасні технології** та практики веб-розробки
+- **Захист від атак** (XSS/CSRF) з практичною демонстрацією
 
-## React Compiler
+## ✨ Особливості
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🎨 Анімації та інтерактивність
+- **Magic Bento** - інтерактивні картки з ефектами світла та частинок
+- **Particles** - 3D частинки на фоні (WebGL)
+- **Galaxy** - зоряне небо з інтерактивністю миші
+- **Liquid Ether** - рідинна анімація фону
+- **GSAP анімації** - плавні переходи та ефекти
+- **Framer Motion** - анімації появи контенту
 
-## Expanding the ESLint configuration
+### 🔒 Безпека
+- **DOMPurify** - захист від XSS атак
+- **CSRF токени** - захист від міжсайтових запитів
+- **Санітизація вводу** - автоматична очистка небезпечного контенту
+- **Безпечний рендеринг HTML** - компонент SafeHTML
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 📱 Адаптивність
+- Повна підтримка мобільних пристроїв
+- Оптимізація для екранів від 320px
+- StaggeredMenu - анімоване мобільне меню
+
+## 🛠️ Технології
+
+### Основні
+- **React 19** - UI бібліотека
+- **Vite** - збірщик та dev-сервер
+- **React Router DOM** - маршрутизація
+
+### Анімації
+- **GSAP** - потужні анімації та ефекти
+- **Framer Motion** - React анімації
+- **@gsap/react** - інтеграція GSAP з React
+
+### WebGL
+- **Three.js** - 3D графіка (LiquidEther)
+- **OGL** - легка WebGL бібліотека (Particles, Galaxy)
+
+### Безпека
+- **DOMPurify** - санітизація HTML
+
+### Стилізація
+- **CSS Modules** - модульні стилі
+- **Custom Properties** - CSS змінні для теми
+
+## 📁 Структура проекту
+
+```
+my-app/
+├── src/
+│   ├── components/          # React компоненти
+│   │   ├── ContactForm/     # Форма з XSS/CSRF захистом
+│   │   ├── SafeHTML/        # Безпечний рендеринг HTML
+│   │   ├── MagicBento/      # Інтерактивні картки
+│   │   ├── Particles/       # 3D частинки (WebGL)
+│   │   ├── Galaxy/          # Зоряне небо (WebGL)
+│   │   ├── LiquidEther/     # Рідинна анімація (WebGL)
+│   │   ├── Header/          # Навігація
+│   │   ├── Footer/          # Підвал
+│   │   └── ScrollToTop/     # Скрол до верху
+│   ├── pages/               # Сторінки
+│   │   ├── Home/           # Головна (Резюме)
+│   │   ├── About/           # Про досвід
+│   │   └── Contact/         # Освіта та контакти
+│   ├── utils/               # Утиліти
+│   │   ├── sanitize.js      # Санітизація HTML/тексту
+│   │   └── csrf.js          # CSRF захист
+│   ├── assets/              # Зображення та ресурси
+│   ├── App.jsx              # Головний компонент
+│   ├── main.jsx             # Точка входу
+│   └── index.css            # Глобальні стилі
+├── SECURITY.md              # Документація безпеки
+└── README.md                # Цей файл
+```
+
+## 🚀 Швидкий старт
+
+### Встановлення залежностей
+
+```bash
+npm install
+```
+
+### Запуск dev-сервера
+
+```bash
+npm run dev
+```
+
+Відкрийте [http://localhost:5173](http://localhost:5173) у браузері.
+
+### Збірка для продакшн
+
+```bash
+npm run build
+```
+
+### Попередній перегляд збірки
+
+```bash
+npm run preview
+```
+
+### Деплой на GitHub Pages
+
+```bash
+npm run deploy
+```
+
+## 📄 Сторінки
+
+### 🏠 Home (Резюме)
+- Особиста інформація
+- Фото та контакти
+- Про мене
+- Ключові навички (MagicBento)
+- Particles фон
+
+### 💼 About (Досвід)
+- Технічні навички
+- Досвід роботи
+- Timeline подій
+- Particles фон
+
+### 🎓 Contact (Освіта)
+- Освіта
+- Поточний розвиток
+- Мови
+- Додаткові якості
+- Контакти
+- **Демонстраційна форма** з XSS/CSRF захистом
+- LiquidEther фон
+
+## 🔒 Безпека
+
+Проект включає повноцінну систему захисту від XSS та CSRF атак:
+
+### XSS захист (DOMPurify)
+- Автоматична санітизація HTML контенту
+- Видалення небезпечних тегів (`<script>`, `<iframe>`, тощо)
+- Очищення небезпечних атрибутів (`onclick`, `onerror`, тощо)
+- Перевірка URL на небезпечні протоколи
+
+### CSRF захист
+- Генерація унікальних токенів
+- Автоматичне додавання токенів до запитів
+- Валідація токенів на сервері
+
+**Детальна документація:** [SECURITY.md](./SECURITY.md)
+
+## 🎨 Компоненти
+
+### MagicBento
+Інтерактивні картки з ефектами:
+- Spotlight ефект
+- Частинки при наведенні
+- Border glow
+- Tilt та magnetism ефекти
+- Click ripple ефект
+
+### Particles
+3D частинки на фоні з:
+- Плавною анімацією
+- Реакцією на рух миші
+- Налаштовуваними кольорами
+
+### Galaxy
+Зоряне небо з:
+- Інтерактивністю миші
+- Репульсією зірок
+- Налаштовуваними параметрами
+
+### LiquidEther
+Рідинна анімація з:
+- Фізичною симуляцією
+- Реакцією на мишу
+- Автоматичною демонстрацією
+
+### ContactForm
+Демонстраційна форма з:
+- Реал-тайм санітизацією
+- Попереднім переглядом
+- Попередженнями про небезпечний контент
+- CSRF захистом
+
+## 📦 Залежності
+
+### Production
+```json
+{
+  "react": "^19.2.0",
+  "react-dom": "^19.2.0",
+  "react-router-dom": "^7.10.1",
+  "framer-motion": "^12.23.25",
+  "gsap": "^3.13.0",
+  "@gsap/react": "^2.1.2",
+  "three": "^0.181.2",
+  "ogl": "^1.0.11",
+  "dompurify": "^3.3.0"
+}
+```
+
+## 🎯 Основні можливості
+
+- ✅ Адаптивний дизайн (320px+)
+- ✅ Плавні анімації та переходи
+- ✅ WebGL фони (Particles, Galaxy, LiquidEther)
+- ✅ Інтерактивні компоненти
+- ✅ Захист від XSS/CSRF
+- ✅ Оптимізація продуктивності
+- ✅ SEO-friendly структура
+- ✅ Accessibility (a11y)
+
+## 📝 Скрипти
+
+- `npm run dev` - Запуск dev-сервера
+- `npm run build` - Збірка для продакшн
+- `npm run preview` - Попередній перегляд збірки
+- `npm run lint` - Перевірка коду ESLint
+- `npm run deploy` - Деплой на GitHub Pages
+
+## 🔧 Налаштування
+
+### Змінні теми (index.css)
+```css
+:root {
+  --color-bg: #0a0a0f;
+  --color-primary: #2dd4bf;
+  --color-text: #ffffff;
+  /* ... */
+}
+```
+
+### Анімації
+Всі анімації налаштовуються через props компонентів. Детальніше в документації компонентів.
+
+## 📚 Документація
+
+- [SECURITY.md](./SECURITY.md) - Детальна документація безпеки (XSS/CSRF)
+- Коментарі в коді - JSDoc документація для утиліт та компонентів
+
+## 🚧 Розробка
+
+### Додавання нової сторінки
+1. Створіть компонент у `src/pages/`
+2. Додайте маршрут у `App.jsx`
+3. Додайте посилання в навігацію (`Header.jsx`)
+
+### Додавання нового компонента
+1. Створіть папку у `src/components/`
+2. Додайте компонент та стилі (CSS Modules)
+3. Імпортуйте та використовуйте
+
+## 📄 Ліцензія
+
+Приватний проект.
+
+## 👤 Автор
+
+**Олександр Заверюха**
+- Frontend Developer / Team Lead
+- IT & Network Specialist
+- Email: ax.zaverukha@gmail.com
+
+---
+
+**Створено з ❤️ використовуючи React, GSAP, Three.js та інші сучасні технології**
