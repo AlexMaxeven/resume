@@ -1,40 +1,38 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { translations } from '../../translations';
 import styles from './Contact.module.css';
 import LiquidEther from '../../components/LiquidEther/LiquidEther';
 import MagicBento from '../../components/MagicBento/MagicBento';
 import ContactForm from '../../components/ContactForm/ContactForm';
 
 const Contact = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   const education = [
-    { icon: '🎓', title: 'Бакалавр, Логістика', description: 'Національний університет біоресурсів і природокористування України (НУБіП)' },
-    { icon: '🎓', title: 'Магістр, Адміністративний менеджмент', description: 'Київський політехнічний інститут (КПІ)' },
-    { icon: '🧠', title: 'Гештальт-терапія', description: 'Академія психотерапії — 3 роки навчання' }
+    { icon: '🎓', title: t.contact.education.bachelor.title, description: t.contact.education.bachelor.description },
+    { icon: '🎓', title: t.contact.education.master.title, description: t.contact.education.master.description },
+    { icon: '🧠', title: t.contact.education.therapy.title, description: t.contact.education.therapy.description }
   ];
 
   const development = [
-    { icon: '🔐', title: 'Кібербезпека', description: 'Kali Linux, принципи web-захисту, XSS/CSRF, DOMPurify. Навчання через документацію та AI.' },
-    { icon: '🛡️', title: 'Веб-захист', description: 'Розширюю знання у захисті веб-додатків, мережевій та прикладній безпеці.' }
+    { icon: '🔐', title: t.contact.development.cybersecurity.title, description: t.contact.development.cybersecurity.description },
+    { icon: '🛡️', title: t.contact.development.webSecurity.title, description: t.contact.development.webSecurity.description }
   ];
 
   const languages = [
-    { icon: '🇺🇦', title: 'Українська', description: 'Рідна' },
-    { icon: '🇬🇧', title: 'Англійська', description: 'B2' }
+    { icon: '🇺🇦', title: t.contact.languages.ukrainian.title, description: t.contact.languages.ukrainian.description },
+    { icon: '🇬🇧', title: t.contact.languages.english.title, description: t.contact.languages.english.description }
   ];
 
   const contacts = [
-    { icon: '📧', title: 'Email', description: 'ax.zaver****@gmail.com' },
-    { icon: '📞', title: 'Телефон', description: '063 034 ** **' },
-    { icon: '📍', title: 'Локація', description: 'Київ, Україна' }
+    { icon: '📧', title: t.contact.contacts.email.title, description: t.contact.contacts.email.description },
+    { icon: '📞', title: t.contact.contacts.phone.title, description: t.contact.contacts.phone.description },
+    { icon: '📍', title: t.contact.contacts.location.title, description: t.contact.contacts.location.description }
   ];
 
-  const qualities = [
-    'Відповідальність',
-    'Уважність до деталей',
-    'Системне мислення',
-    'Лідерство',
-    'Комунікація',
-    'Координація команди'
-  ];
+  const qualities = t.contact.qualities;
 
   return (
     <div className={styles.contact}>
@@ -67,7 +65,7 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Профіль
+            {t.contact.label}
           </motion.span>
           <motion.h1 
             className={styles.title}
@@ -75,7 +73,7 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Освіта та контакти
+            {t.contact.title}
           </motion.h1>
           <motion.p 
             className={styles.subtitle}
@@ -83,7 +81,7 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Освітній шлях, розвиток та способи зв'язку
+            {t.contact.subtitle}
           </motion.p>
         </div>
       </section>
@@ -97,7 +95,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Освіта
+            {t.contact.educationTitle}
           </motion.h2>
           
           <motion.div
@@ -132,7 +130,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Поточний розвиток
+            {t.contact.developmentTitle}
           </motion.h2>
           
           <motion.div
@@ -167,7 +165,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Мови
+            {t.contact.languagesTitle}
           </motion.h2>
           
           <motion.div
@@ -202,7 +200,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Додаткові якості
+            {t.contact.qualitiesTitle}
           </motion.h2>
           
           <motion.div 
@@ -213,11 +211,12 @@ const Contact = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <p className={styles.qualText}>
-              Відповідальність, уважність до деталей, системне мислення, вміння координувати команду та знаходити ефективні рішення.
+              {t.contact.qualitiesText1}
             </p>
-            <p className={styles.qualText}>
-              Поєдную практичний досвід <strong>frontend-розробки</strong>, <strong>мережевих технологій</strong> і розуміння людської поведінки, що дозволяє ефективно будувати комунікацію та керувати процесами.
-            </p>
+            <p 
+              className={styles.qualText}
+              dangerouslySetInnerHTML={{ __html: t.contact.qualitiesText2 }}
+            />
           </motion.div>
 
           <div className={styles.qualTags}>
@@ -254,7 +253,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Контакти
+            {t.contact.contactsTitle}
           </motion.h2>
           
           <motion.div

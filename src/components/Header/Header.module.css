@@ -16,6 +16,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .logo {
@@ -81,6 +82,88 @@
   width: 100%;
 }
 
+/* Right Controls Container */
+.rightControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1001;
+}
+
+/* Language Switcher */
+.languageSwitcher {
+  display: flex;
+  background: rgba(45, 212, 191, 0.08);
+  border: 1px solid rgba(45, 212, 191, 0.2);
+  border-radius: 8px;
+  padding: 2px;
+  gap: 2px;
+  position: relative;
+  overflow: visible;
+}
+
+.langButton {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 1;
+  min-width: 44px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.langButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #2dd4bf, #14b8a6);
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+  border-radius: 6px;
+}
+
+.langButton:hover {
+  color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+.langButton:active {
+  transform: translateY(0);
+}
+
+.langButtonActive {
+  color: #0f0f14;
+  background: linear-gradient(135deg, #2dd4bf, #14b8a6);
+  box-shadow: 0 2px 12px rgba(45, 212, 191, 0.4), 0 0 0 1px rgba(45, 212, 191, 0.1);
+  transform: scale(1.02);
+  z-index: 2;
+}
+
+.langButtonActive::before {
+  opacity: 1;
+}
+
+.langButtonActive:hover {
+  color: #0f0f14;
+  background: linear-gradient(135deg, #34e0cd, #1cc9b5);
+  box-shadow: 0 4px 16px rgba(45, 212, 191, 0.5), 0 0 0 1px rgba(45, 212, 191, 0.2);
+  transform: scale(1.05);
+}
+
 /* Burger Menu */
 .burger {
   display: none;
@@ -135,8 +218,23 @@
     color: #2dd4bf;
   }
 
+  .rightControls {
+    gap: 0.75rem;
+  }
+
   .burger {
     display: flex;
+  }
+
+  .languageSwitcher {
+    padding: 2px;
+    gap: 2px;
+  }
+
+  .langButton {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem;
+    min-width: 40px;
   }
 
   .nav {
@@ -207,5 +305,15 @@
   .link {
     font-size: 1rem;
     padding: 1rem 0;
+  }
+
+  .rightControls {
+    gap: 0.5rem;
+  }
+
+  .langButton {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.6rem;
+    min-width: 36px;
   }
 }

@@ -1,49 +1,37 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { translations } from '../../translations';
 import styles from './About.module.css';
 import Particles from '../../components/Particles/Particles';
 import MagicBento from '../../components/MagicBento/MagicBento';
 
 const About = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   const skillCategories = [
-    { icon: '⚛️', title: 'Frontend', description: 'React.js, JavaScript (ES6+), HTML5, CSS3, Tailwind, Vite, Redux, jQuery, PHP' },
-    { icon: '🔗', title: 'Інтеграції', description: 'Binom, Keitaro, Ecco, StatCounter, Google Analytics' },
-    { icon: '🛡️', title: 'Захист коду', description: 'Мініфікація, обфускація, контроль середовищ збірки' },
-    { icon: '🌐', title: 'Network / DevOps', description: 'MikroTik RouterOS, WireGuard, L2TP/IPsec, DHCP, Failover, Firewall, маршрутизація, Netwatch, VPS-сервера' },
-    { icon: '📡', title: 'Мережеві технології', description: 'Налаштування оптичних каналів, статичних провайдерів, резервування з\'єднань, балансування трафіку' },
-    { icon: '🛰️', title: 'Starlink', description: 'Первинна активація, налаштування додатку та інтеграція зі шлюзами' },
-    { icon: '🔧', title: 'Обладнання', description: 'MikroTik, TP-Link, Netis, Huawei, Starlink, Motorola, Garmin GPSMAP / Montana' },
-    { icon: '🔐', title: 'Безпека', description: 'Kali Linux, DOMPurify, базова веб-захист (XSS, CSRF)' }
+    { icon: '⚛️', title: t.about.skillCategories.frontend.title, description: t.about.skillCategories.frontend.description },
+    { icon: '🔗', title: t.about.skillCategories.integrations.title, description: t.about.skillCategories.integrations.description },
+    { icon: '🛡️', title: t.about.skillCategories.codeProtection.title, description: t.about.skillCategories.codeProtection.description },
+    { icon: '🌐', title: t.about.skillCategories.network.title, description: t.about.skillCategories.network.description },
+    { icon: '📡', title: t.about.skillCategories.networkTech.title, description: t.about.skillCategories.networkTech.description },
+    { icon: '🛰️', title: t.about.skillCategories.starlink.title, description: t.about.skillCategories.starlink.description },
+    { icon: '🔧', title: t.about.skillCategories.equipment.title, description: t.about.skillCategories.equipment.description },
+    { icon: '🔐', title: t.about.skillCategories.security.title, description: t.about.skillCategories.security.description }
   ];
 
   const jobs = [
     {
-      title: 'Frontend Developer / Team Lead',
-      company: 'IT Studio / Freelance Projects',
-      period: '2021 — Літо 2025',
-      tasks: [
-        'Розробка, оптимізація та підтримка веб-інтерфейсів (React.js, Vite, Tailwind)',
-        'Створення власних збірок для різних проєктів, інтеграція з Binom, Keitaro, Ecco',
-        'Впровадження захисту: обфускація, мініфікація, контроль оточення продакшн-білдів',
-        'Керування командою до 10 розробників, розподіл завдань, рев\'ю коду',
-        'Оптимізація UI/UX та впровадження базових заходів фронтенд-безпеки'
-      ]
+      title: t.about.jobs.frontend.title,
+      company: t.about.jobs.frontend.company,
+      period: t.about.jobs.frontend.period,
+      tasks: t.about.jobs.frontend.tasks
     },
     {
-      title: 'Військовий зв\'язківець / Network Specialist',
-      company: 'Відділ зв\'язку (ЗСУ) 🇺🇦',
-      period: 'серпень 2025 — дотепер',
-      tasks: [
-        'Налаштування, прошивка та адміністрування маршрутизаторів MikroTik, Netis, TP-Link',
-        'Робота з оптичними лініями, статичними провайдерами та динамічними DHCP-з\'єднаннями',
-        'Організація резервних каналів зв\'язку, балансування провайдерів, Failover',
-        'Налаштування Mangle-правил для базового розподілення трафіку та ресурсів',
-        'Створення та обслуговування VPS MikroTik-сервера',
-        'Моніторинг мережі через Netwatch, автоматичне перемикання маршрутів',
-        'Налаштування firewall-правил, VPN-каналів (WireGuard, L2TP), DHCP',
-        'Робота з Starlink: активація через додаток, налаштування шлюзу, тестування з\'єднання',
-        'Робота з Garmin навігаторами (прошивка, мапи, налаштування)',
-        'Налаштування та підтримка акаунтів Кропива'
-      ]
+      title: t.about.jobs.military.title,
+      company: t.about.jobs.military.company,
+      period: t.about.jobs.military.period,
+      tasks: t.about.jobs.military.tasks
     }
   ];
 
@@ -71,7 +59,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Кар'єра
+            {t.about.label}
           </motion.span>
           <motion.h1 
             className={styles.title}
@@ -79,7 +67,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Досвід та навички
+            {t.about.title}
           </motion.h1>
           <motion.p 
             className={styles.subtitle}
@@ -87,7 +75,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Технічний стек та професійний шлях
+            {t.about.subtitle}
           </motion.p>
         </div>
       </section>
@@ -101,7 +89,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Технічні навички
+            {t.about.skillsTitle}
           </motion.h2>
           
           <motion.div
@@ -136,7 +124,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Досвід роботи
+            {t.about.experienceTitle}
           </motion.h2>
 
           <div className={styles.timeline}>

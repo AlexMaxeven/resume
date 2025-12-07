@@ -1,63 +1,27 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { translations } from '../../translations';
 import styles from './Psychology.module.css';
 import LiquidEther from '../../components/LiquidEther/LiquidEther';
 import MagicBento from '../../components/MagicBento/MagicBento';
 
 const Psychology = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   // Напрямки та навички
-  const directions = [
-    { icon: '👤', title: 'Особиста терапія', description: '2 роки індивідуальної терапії з сертифікованим гештальт-терапевтом' },
-    { icon: '🤝', title: 'Робота в трійках', description: '2 роки регулярної практики в форматі «клієнт-терапевт-спостерігач»' },
-    { icon: '🌐', title: 'Групова робота', description: 'Участь у динамічних групах впродовж 3 років' },
-    { icon: '🎓', title: 'Навчання', description: 'Академія Погодіна — трирічна програма підготовки гештальт-практиків' }
-  ];
+  const directions = t.psychology.directionsCards;
 
   // Детальна інформація про напрямки
   const directionsDetailed = {
-    personal: {
-      title: '👤 Особиста терапія',
-      items: [
-        '2 роки індивідуальної терапії з сертифікованим гештальт-терапевтом',
-        'Опрацювання особистих тем: кордони, тривожність, саморегуляція, емоційна усвідомленість',
-        'Формування особистого досвіду проходження терапевтичного процесу'
-      ]
-    },
-    triads: {
-      title: '🤝 Робота в трійках (малі терапевтичні групи)',
-      items: [
-        '2 роки регулярної практики в форматі «клієнт-терапевт-спостерігач»',
-        'Розвиток навичок терапевтичної позиції, емпатійного слухання та роботи з феноменологією',
-        'Відпрацювання контактних циклів та інтервенцій'
-      ]
-    },
-    group: {
-      title: '🌐 Групова робота',
-      items: [
-        'Участь у динамічних групах впродовж 3 років',
-        'Щотижневі групові зустрічі',
-        'Щомісячні триденні інтенсиви (глибока проживальна робота, групова динаміка, процесні інтервенції)',
-        'Практика усвідомленого контакту, роботи з фрустрацією, емоціями та груповими процесами'
-      ]
-    },
-    education: {
-      title: '🎓 Навчання',
-      items: [
-        'Академія Погодіна — трирічна програма підготовки гештальт-практиків',
-        'Теорія гештальт-підходу, цикл контакту, нейрофізіологія емоцій, межі, робота з тілесністю',
-        'Навички підтримки, інтервенцій, контейнерування та роботи з «тут-і-зараз»'
-      ]
-    }
+    personal: t.psychology.directions.personal,
+    triads: t.psychology.directions.triads,
+    group: t.psychology.directions.group,
+    education: t.psychology.directions.education
   };
 
   // Книги
-  const books = [
-    '«Эго, голод и агрессия» — Фредерік Перлз',
-    '«Путешествие в гештальт»',
-    '«Осознанность или тревога»',
-    '«Управляемое чудо» — Погодін',
-    '«Self в отношениях»',
-    'Книга Лебедевой и Кумача'
-  ];
+  const books = t.psychology.books;
 
   return (
     <div className={styles.psychology}>
@@ -90,7 +54,7 @@ const Psychology = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Психологія
+            {t.psychology.label}
           </motion.span>
           <motion.h1 
             className={styles.title}
@@ -98,7 +62,7 @@ const Psychology = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Гештальт-терапія
+            {t.psychology.title}
           </motion.h1>
           <motion.p 
             className={styles.subtitle}
@@ -106,7 +70,7 @@ const Psychology = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Досвід навчання, особистої терапії та роботи в групах
+            {t.psychology.subtitle}
           </motion.p>
           <motion.p 
             className={styles.description}
@@ -114,7 +78,7 @@ const Psychology = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            Протягом трьох років проходив системне навчання в підході гештальт-терапії в Академії Погодіна, поєднуючи теорію з інтенсивною особистою практикою, роботою в малих групах та участю в довготривалих динамічних процесах.
+            {t.psychology.description}
           </motion.p>
         </div>
       </section>
@@ -129,7 +93,7 @@ const Psychology = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Напрямки та навички
+            {t.psychology.directionsTitle}
           </motion.h2>
           
           <motion.div
@@ -242,7 +206,7 @@ const Psychology = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Основні книги з гештальт-терапії
+            {t.psychology.booksTitle}
           </motion.h2>
           
           <motion.ul

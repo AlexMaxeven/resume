@@ -1,46 +1,51 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { translations } from '../../translations';
 import styles from './Home.module.css';
 import alexPhoto from '../../assets/alex.png';
 import MagicBento from '../../components/MagicBento/MagicBento';
 import Particles from '../../components/Particles/Particles';
 
 const Home = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   const skills = [
     {
       icon: '⚛️',
-      title: 'Frontend',
-      description: 'JavaScript, React.js, Vite, Tailwind CSS, Redux, HTML/CSS',
+      title: t.home.skills.frontend.title,
+      description: t.home.skills.frontend.description,
       label: 'Dev'
     },
     {
       icon: '🌐',
-      title: 'MikroTik',
-      description: 'Маршрутизація, VPN, резервні канали, Firewall, Netwatch',
+      title: t.home.skills.mikrotik.title,
+      description: t.home.skills.mikrotik.description,
       label: 'Network'
     },
     {
       icon: '🔐',
-      title: 'Security',
-      description: 'Kali Linux, XSS/CSRF захист, DOMPurify, веб-безпека, мережевий захист',
+      title: t.home.skills.security.title,
+      description: t.home.skills.security.description,
       label: 'Cyber'
     },
     {
       icon: '📊',
-      title: 'Tracking',
-      description: 'Binom, Keitaro, StatCounter, Google Analytics',
+      title: t.home.skills.tracking.title,
+      description: t.home.skills.tracking.description,
       label: 'Analytics'
     },
     {
       icon: '🛰️',
-      title: 'Starlink',
-      description: 'Активація, налаштування, інтеграція зі шлюзами',
+      title: t.home.skills.starlink.title,
+      description: t.home.skills.starlink.description,
       label: 'Satellite'
     },
     {
       icon: '👥',
-      title: 'Team Lead',
-      description: 'Керування командою до 10 осіб, рев\'ю коду, розподіл завдань',
+      title: t.home.skills.teamlead.title,
+      description: t.home.skills.teamlead.description,
       label: 'Management'
     }
   ];
@@ -94,7 +99,7 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.3 }}
               >
-                Резюме
+                {t.home.label}
               </motion.span>
               <motion.h1 
                 className={styles.name}
@@ -102,7 +107,7 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.4 }}
               >
-                Заверюха Олександр Вікторович
+                {t.home.name}
               </motion.h1>
               <motion.p 
                 className={styles.position}
@@ -110,8 +115,8 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.5 }}
               >
-                IT & Network Specialist
-                <span className={styles.positionSub}>(Frontend / MikroTik / Security)</span>
+                {t.home.position}
+                <span className={styles.positionSub}>{t.home.positionSub}</span>
               </motion.p>
               
               <motion.div 
@@ -122,19 +127,19 @@ const Home = () => {
               >
                 <div className={styles.contactItem}>
                   <span className={styles.contactIcon}>📍</span>
-                  <span>Україна, Київ</span>
+                  <span>{t.home.location}</span>
                 </div>
                 <div className={styles.contactItem}>
                   <span className={styles.contactIcon}>📧</span>
-                  <span>ax.zaver****@gmail.com</span>
+                  <span>{t.home.email}</span>
                 </div>
                 <div className={styles.contactItem}>
                   <span className={styles.contactIcon}>📞</span>
-                  <span>063 034 ** **</span>
+                  <span>{t.home.phone}</span>
                 </div>
                 <div className={styles.contactItem}>
                   <span className={styles.contactIcon}>🎂</span>
-                  <span>18 жовтня 1993</span>
+                  <span>{t.home.birthday}</span>
                 </div>
               </motion.div>
             </div>
@@ -151,7 +156,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Про мене
+            {t.home.aboutMe}
           </motion.h2>
           <div className={styles.aboutContent}>
             <motion.p 
@@ -160,27 +165,24 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              Фронтенд-розробник із понад <strong>3,5 роками комерційного досвіду</strong>, включно з півроку в ролі тімліда команди з 10 осіб. Спеціалізуюся на створенні вебінтерфейсів на JavaScript, React.js, Vite, Tailwind, інтеграції з трекінговими платформами (Binom, Keitaro, StatCounter) та оптимізації продуктивності клієнтських застосунків.
-            </motion.p>
+              dangerouslySetInnerHTML={{ __html: t.home.aboutText1 }}
+            />
             <motion.p 
               className={styles.aboutText}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              Маю практичний досвід роботи з мережевими рішеннями <strong>MikroTik</strong> — налаштування маршрутів, резервних каналів, VPN і базових схем захисту.
-            </motion.p>
+              dangerouslySetInnerHTML={{ __html: t.home.aboutText2 }}
+            />
             <motion.p 
               className={styles.aboutText}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              Зараз активно розвиваюся у напрямку <strong>кібербезпеки</strong>: знайомлюсь із Kali Linux, принципами безпеки вебзастосунків і технологіями фронтенд-захисту (DOMPurify, XSS/CSRF).
-            </motion.p>
+              dangerouslySetInnerHTML={{ __html: t.home.aboutText3 }}
+            />
             <motion.p 
               className={styles.aboutText}
               initial={{ opacity: 0, y: 20 }}
@@ -188,7 +190,7 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              До повномасштабної війни також три роки навчався психотерапії в академії (гештальт-напрям), що допомогло сформувати навички комунікації, лідерства та роботи з командами.
+              {t.home.aboutText4}
             </motion.p>
             <motion.p 
               className={styles.aboutHighlight}
@@ -198,7 +200,7 @@ const Home = () => {
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               <span className={styles.highlightIcon}>🇺🇦</span>
-              Літо 2025 року — військовослужбовець.
+              {t.home.aboutHighlight}
             </motion.p>
 
             <motion.div
@@ -208,7 +210,7 @@ const Home = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               <Link to="/about" className={styles.moreBtn}>
-                Детальніше про досвід →
+                {t.home.moreBtn}
               </Link>
             </motion.div>
           </div>
@@ -224,7 +226,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Ключові навички
+            {t.home.skillsTitle}
           </motion.h2>
           
           <motion.div

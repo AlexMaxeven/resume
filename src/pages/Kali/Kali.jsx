@@ -1,80 +1,31 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { translations } from '../../translations';
 import styles from './Kali.module.css';
 import LiquidEther from '../../components/LiquidEther/LiquidEther';
 import MagicBento from '../../components/MagicBento/MagicBento';
 
 const Kali = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   // Компетенції
-  const competencies = [
-    { icon: '🔍', title: 'Сканування мереж', description: 'Визначення відкритих портів, сервісів, ОС' },
-    { icon: '📡', title: 'Аналіз трафіку', description: 'Пошук аномалій, діагностика підключень' },
-    { icon: '🌐', title: 'Тестування вебдодатків', description: 'XSS, CSRF, помилки конфігурації' },
-    { icon: '🛡️', title: 'Пошук вразливостей', description: 'Аудит безпеки вебсерверів та мереж' }
-  ];
+  const competencies = t.kali.competencies;
 
   // Інструменти
-  const tools = [
-    { icon: '🔍', title: 'Nmap', description: 'Сканування портів, fingerprinting, аудит мережевих сервісів' },
-    { icon: '🛡️', title: 'Burp Suite', description: 'Перехоплення, модифікація та аналіз HTTP-трафіку' },
-    { icon: '📡', title: 'Wireshark', description: 'Аналіз пакетів, діагностика мережі' },
-    { icon: '🔐', title: 'Hydra', description: 'Тестування на міцність паролів' },
-    { icon: '⚔️', title: 'Metasploit', description: 'Тестові експлойти, робота з модулями (базовий рівень)' },
-    { icon: '🔎', title: 'Nikto', description: 'Пошук вразливостей вебсерверів' }
-  ];
+  const tools = t.kali.tools;
 
   // Мета
-  const goals = [
-    { icon: '🎯', title: 'Поглиблення в cybersecurity', description: 'Практичні методи тестування та захисту' },
-    { icon: '🧪', title: 'Penetration Testing', description: 'Практика на тестових цілях та лабораторіях' },
-    { icon: '💻', title: 'Застосування у розробці', description: 'Використання знань у фронтенді та мережах' }
-  ];
+  const goals = t.kali.goals;
 
   // Інструменти детально
-  const toolsDetailed = {
-    scanning: [
-      { name: 'Nmap', desc: 'Сканування портів, fingerprinting, аудит мережевих сервісів' },
-      { name: 'Zenmap', desc: 'Візуалізація результатів сканування' },
-      { name: 'WhatWeb / Wappalyzer', desc: 'Технологічний стек вебсайтів' }
-    ],
-    vulnerabilities: [
-      { name: 'Nikto', desc: 'Пошук вразливостей вебсерверів' },
-      { name: 'OpenVAS', desc: 'Сканування мережевих вразливостей (базовий рівень)' }
-    ],
-    pentesting: [
-      { name: 'Burp Suite (Community)', desc: 'Перехоплення, модифікація та аналіз HTTP-трафіку, базове тестування XSS/CSRF' },
-      { name: 'Metasploit Framework', desc: 'Тестові експлойти, робота з модулями auxiliary (базовий рівень)' },
-      { name: 'Hydra', desc: 'Тестування на міцність паролів для SSH/FTP/HTTP auth' }
-    ],
-    traffic: [
-      { name: 'Wireshark', desc: 'Аналіз пакетів, діагностика мережі' },
-      { name: 'tcpdump', desc: 'Перехоплення трафіку з CLI' }
-    ],
-    osint: [
-      { name: 'theHarvester', desc: 'Збір email/доменів/субдоменів' },
-      { name: 'dnsenum / dig', desc: 'DNS-розвідка' },
-      { name: 'Recon-ng', desc: 'Модульна платформа OSINT (початковий рівень)' }
-    ]
-  };
+  const toolsDetailed = t.kali.toolsDetailed;
 
   // Практичні навички
-  const practicalSkills = [
-    'Виконання базового аудиту мережі: визначення відкритих портів, сервісів, ОС',
-    'Проведення початкового тестування вебдодатків (XSS, CSRF, базові помилки конфігурації)',
-    'Аналіз мережевого трафіку, пошук аномалій, діагностика нестабільності підключень',
-    'Перехоплення та модифікація HTTP-запитів через Burp Suite',
-    'Створення звітів про знайдені потенційні вразливості',
-    'Проведення OSINT-досліджень доменів, компаній, субдоменів',
-    'Тестування на слабкі паролі через Hydra та інші інструменти'
-  ];
+  const practicalSkills = t.kali.practicalSkills;
 
   // Що вивчаю
-  const learning = [
-    'OWASP Top-10 та моделі типових атак',
-    'Створення безпечних фронтенд-застосунків (DOMPurify, захист від XSS, CSRF)',
-    'Робота з Metasploit Framework на практичних тестових цілях',
-    'Безпечні конфігурації мережевих пристроїв (MikroTik)',
-    'Побудова VPN, тунелів та аудит мережевих сервісів'
-  ];
+  const learning = t.kali.learning;
 
   return (
     <div className={styles.kali}>
@@ -107,7 +58,7 @@ const Kali = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Кібербезпека
+            {t.kali.label}
           </motion.span>
           <motion.h1 
             className={styles.title}
@@ -115,7 +66,7 @@ const Kali = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Kali Linux
+            {t.kali.title}
           </motion.h1>
           <motion.p 
             className={styles.subtitle}
@@ -123,7 +74,7 @@ const Kali = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Практичний досвід роботи з інструментами кібербезпеки, аудитом безпеки та базовим penetration testing
+            {t.kali.subtitle}
           </motion.p>
           <motion.p 
             className={styles.description}
@@ -131,7 +82,7 @@ const Kali = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            Використовую Kali Linux для освоєння ключових технік тестування безпеки вебзастосунків, мереж та інфраструктури. Працюю з інструментами OSINT, сканування вразливостей, перехоплення трафіку, аналізу мереж та експлуатації типових атак OWASP.
+            {t.kali.description}
           </motion.p>
         </div>
       </section>
@@ -146,7 +97,7 @@ const Kali = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Компетенції
+            {t.kali.competenciesTitle}
           </motion.h2>
           
           <motion.div
@@ -182,7 +133,7 @@ const Kali = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Інструменти, з якими працюю
+            {t.kali.toolsTitle}
           </motion.h2>
           
           <motion.div
@@ -215,9 +166,9 @@ const Kali = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <div className={styles.toolCategory}>
-              <h3 className={styles.categoryTitle}>🔍 Сканування та аналіз</h3>
+              <h3 className={styles.categoryTitle}>{toolsDetailed.scanning.title}</h3>
               <ul className={styles.toolList}>
-                {toolsDetailed.scanning.map((tool, idx) => (
+                {toolsDetailed.scanning.tools.map((tool, idx) => (
                   <li key={idx} className={styles.toolItem}>
                     <strong>{tool.name}</strong> — {tool.desc}
                   </li>
@@ -226,9 +177,9 @@ const Kali = () => {
             </div>
 
             <div className={styles.toolCategory}>
-              <h3 className={styles.categoryTitle}>🛡 Виявлення вразливостей</h3>
+              <h3 className={styles.categoryTitle}>{toolsDetailed.vulnerabilities.title}</h3>
               <ul className={styles.toolList}>
-                {toolsDetailed.vulnerabilities.map((tool, idx) => (
+                {toolsDetailed.vulnerabilities.tools.map((tool, idx) => (
                   <li key={idx} className={styles.toolItem}>
                     <strong>{tool.name}</strong> — {tool.desc}
                   </li>
@@ -237,9 +188,9 @@ const Kali = () => {
             </div>
 
             <div className={styles.toolCategory}>
-              <h3 className={styles.categoryTitle}>🧪 Penetration Testing інструменти</h3>
+              <h3 className={styles.categoryTitle}>{toolsDetailed.pentesting.title}</h3>
               <ul className={styles.toolList}>
-                {toolsDetailed.pentesting.map((tool, idx) => (
+                {toolsDetailed.pentesting.tools.map((tool, idx) => (
                   <li key={idx} className={styles.toolItem}>
                     <strong>{tool.name}</strong> — {tool.desc}
                   </li>
@@ -248,9 +199,9 @@ const Kali = () => {
             </div>
 
             <div className={styles.toolCategory}>
-              <h3 className={styles.categoryTitle}>📡 Аналіз трафіку та мереж</h3>
+              <h3 className={styles.categoryTitle}>{toolsDetailed.traffic.title}</h3>
               <ul className={styles.toolList}>
-                {toolsDetailed.traffic.map((tool, idx) => (
+                {toolsDetailed.traffic.tools.map((tool, idx) => (
                   <li key={idx} className={styles.toolItem}>
                     <strong>{tool.name}</strong> — {tool.desc}
                   </li>
@@ -259,9 +210,9 @@ const Kali = () => {
             </div>
 
             <div className={styles.toolCategory}>
-              <h3 className={styles.categoryTitle}>📂 OSINT та інформаційна розвідка</h3>
+              <h3 className={styles.categoryTitle}>{toolsDetailed.osint.title}</h3>
               <ul className={styles.toolList}>
-                {toolsDetailed.osint.map((tool, idx) => (
+                {toolsDetailed.osint.tools.map((tool, idx) => (
                   <li key={idx} className={styles.toolItem}>
                     <strong>{tool.name}</strong> — {tool.desc}
                   </li>
@@ -282,7 +233,7 @@ const Kali = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Практичні навички
+            {t.kali.skillsTitle}
           </motion.h2>
           
           <motion.ul
@@ -318,7 +269,7 @@ const Kali = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Наразі вивчаю
+            {t.kali.learningTitle}
           </motion.h2>
           
           <motion.ul
@@ -354,7 +305,7 @@ const Kali = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Мета роботи з Kali Linux
+            {t.kali.goalsTitle}
           </motion.h2>
           
           <motion.div
@@ -385,7 +336,7 @@ const Kali = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            Поглибити навички у сфері кібербезпеки та зрозуміти практичні методи тестування й захисту вебзастосунків, інфраструктури та мереж. Застосовувати ці знання у фронтенд-розробці та при роботі з мережевими системами.
+            {t.kali.goalText}
           </motion.p>
         </div>
       </section>

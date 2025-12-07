@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { translations } from '../../translations';
 import styles from './Header.module.css';
 import SplitText from '../SplitText/SplitText';
 
 const Header = () => {
+  const { language, setLanguage } = useLanguage();
+  const t = translations[language];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Блокуємо скрол сторінки, коли меню відкрито
@@ -51,15 +55,34 @@ const Header = () => {
           />
         </NavLink>
 
-        <button 
-          className={`${styles.burger} ${isMenuOpen ? styles.burgerActive : ''}`}
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          <span className={styles.burgerLine}></span>
-          <span className={styles.burgerLine}></span>
-          <span className={styles.burgerLine}></span>
-        </button>
+        <div className={styles.rightControls}>
+          <div className={styles.languageSwitcher}>
+            <button 
+              className={`${styles.langButton} ${language === 'uk' ? styles.langButtonActive : ''}`}
+              onClick={() => setLanguage('uk')}
+              aria-label="Switch to Ukrainian"
+            >
+              UK
+            </button>
+            <button 
+              className={`${styles.langButton} ${language === 'en' ? styles.langButtonActive : ''}`}
+              onClick={() => setLanguage('en')}
+              aria-label="Switch to English"
+            >
+              EN
+            </button>
+          </div>
+
+          <button 
+            className={`${styles.burger} ${isMenuOpen ? styles.burgerActive : ''}`}
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            <span className={styles.burgerLine}></span>
+            <span className={styles.burgerLine}></span>
+            <span className={styles.burgerLine}></span>
+          </button>
+        </div>
         
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
           <NavLink 
@@ -69,7 +92,7 @@ const Header = () => {
             }
             onClick={closeMenu}
           >
-            Резюме
+            {t.nav.resume}
           </NavLink>
           <NavLink 
             to="/about" 
@@ -78,7 +101,7 @@ const Header = () => {
             }
             onClick={closeMenu}
           >
-            Досвід
+            {t.nav.experience}
           </NavLink>
           <NavLink 
             to="/contact" 
@@ -87,7 +110,7 @@ const Header = () => {
             }
             onClick={closeMenu}
           >
-            Освіта
+            {t.nav.education}
           </NavLink>
           <NavLink 
             to="/kali" 
@@ -96,7 +119,7 @@ const Header = () => {
             }
             onClick={closeMenu}
           >
-            Kali
+            {t.nav.kali}
           </NavLink>
           <NavLink 
             to="/psychology" 
@@ -105,7 +128,7 @@ const Header = () => {
             }
             onClick={closeMenu}
           >
-            Психологія
+            {t.nav.psychology}
           </NavLink>
         </nav>
       </div>

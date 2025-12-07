@@ -4,12 +4,16 @@
  */
 
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { translations } from '../../translations';
 import { sanitizeHTML, sanitizeText, sanitizeURL, containsDangerousContent } from '../../utils/sanitize';
 import { initCSRFToken, getCSRFToken, secureFetch } from '../../utils/csrf';
 import SafeHTML from '../SafeHTML/SafeHTML';
 import styles from './ContactForm.module.css';
 
 const ContactForm = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -77,12 +81,12 @@ const ContactForm = () => {
 
     // Перевірка на небезпечний контент
     if (containsDangerousContent(formData.message)) {
-      setError('⚠️ Виявлено потенційно небезпечний контент! Він буде автоматично очищено.');
+      setError(t.contactForm.errorDangerous);
     }
 
     // Валідація форми
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      setError('Будь ласка, заповніть всі поля');
+      setError(t.contactForm.errorRequired);
       return;
     }
 
@@ -120,7 +124,7 @@ const ContactForm = () => {
         setSubmitted(false);
       }, 3000);
     } catch (err) {
-      setError('Помилка відправки форми. Спробуйте ще раз.');
+      setError(t.contactForm.errorSubmit);
       console.error('Помилка:', err);
     }
   };
@@ -128,10 +132,9 @@ const ContactForm = () => {
   return (
     <div className={styles.contactForm}>
       <div className={styles.formHeader}>
-        <h3 className={styles.formTitle}>Демонстрація захисту від XSS/CSRF</h3>
+        <h3 className={styles.formTitle}>{t.contactForm.title}</h3>
         <p className={styles.formDescription}>
-          Ця форма демонструє захист від XSS (DOMPurify) та CSRF (токени).
-          Спробуйте ввести небезпечний код у повідомлення, щоб побачити захист у дії.
+          {t.contactForm.description}
         </p>
       </div>
 
@@ -141,7 +144,7 @@ const ContactForm = () => {
 
         <div className={styles.formGroup}>
           <label htmlFor="name" className={styles.label}>
-            Ім'я
+            {t.contactForm.name}
           </label>
           <input
             type="text"
@@ -150,14 +153,14 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             className={styles.input}
-            placeholder="Ваше ім'я"
+            placeholder={t.contactForm.namePlaceholder}
             required
           />
         </div>
 
         <div className={styles.formGroup}>
           <label htmlFor="email" className={styles.label}>
-            Email
+            {t.contactForm.email}
           </label>
           <input
             type="email"
@@ -173,9 +176,9 @@ const ContactForm = () => {
 
         <div className={styles.formGroup}>
           <label htmlFor="message" className={styles.label}>
-            Повідомлення
+            {t.contactForm.message}
             {isDangerous && (
-              <span className={styles.warning}> ⚠️ Виявлено небезпечний контент!</span>
+              <span className={styles.warning}> {t.contactForm.warning}</span>
             )}
           </label>
           <textarea
@@ -184,19 +187,19 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleChange}
             className={`${styles.textarea} ${isDangerous ? styles.textareaDangerous : ''}`}
-            placeholder="Введіть повідомлення... Спробуйте: &lt;script&gt;alert('XSS')&lt;/script&gt;"
+            placeholder={t.contactForm.messagePlaceholder}
             rows={5}
             required
           />
           <small className={styles.hint}>
-            💡 Спробуйте ввести: &lt;script&gt;alert('XSS')&lt;/script&gt; або &lt;img src=x onerror=alert(1)&gt;
+            {t.contactForm.hint}
           </small>
         </div>
 
         {/* Попередній перегляд (безпечний) */}
         {preview && (
           <div className={styles.preview}>
-            <h4 className={styles.previewTitle}>Попередній перегляд (безпечний HTML):</h4>
+            <h4 className={styles.previewTitle}>{t.contactForm.previewTitle}</h4>
             <div className={styles.previewContent}>
               <SafeHTML content={preview} />
             </div>
@@ -211,21 +214,20 @@ const ContactForm = () => {
 
         {submitted && (
           <div className={styles.success}>
-            ✅ Форма успішно відправлена! (Демонстрація)
+            {t.contactForm.success}
           </div>
         )}
 
         <button type="submit" className={styles.submitButton}>
-          Відправити (з CSRF захистом)
+          {t.contactForm.submit}
         </button>
 
         <div className={styles.securityInfo}>
-          <h4 className={styles.securityTitle}>🔒 Застосовані заходи безпеки:</h4>
+          <h4 className={styles.securityTitle}>{t.contactForm.securityTitle}</h4>
           <ul className={styles.securityList}>
-            <li>✅ <strong>DOMPurify</strong> - санітизація HTML контенту</li>
-            <li>✅ <strong>CSRF токен</strong> - захист від міжсайтових запитів</li>
-            <li>✅ <strong>Валідація вводу</strong> - перевірка на небезпечні патерни</li>
-            <li>✅ <strong>Безпечний рендеринг</strong> - використання SafeHTML компонента</li>
+            {t.contactForm.securityItems.map((item, index) => (
+              <li key={index} dangerouslySetInnerHTML={{ __html: `✅ ${item}` }} />
+            ))}
           </ul>
         </div>
       </form>
