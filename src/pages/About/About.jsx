@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { translations } from '../../translations';
 import styles from './About.module.css';
@@ -59,7 +59,17 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {t.about.label}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-label`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+              >
+                {t.about.label}
+              </motion.span>
+            </AnimatePresence>
           </motion.span>
           <motion.h1 
             className={styles.title}
@@ -67,7 +77,18 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            {t.about.title}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-title`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.about.title}
+              </motion.span>
+            </AnimatePresence>
           </motion.h1>
           <motion.p 
             className={styles.subtitle}
@@ -75,7 +96,18 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            {t.about.subtitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-subtitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.about.subtitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.p>
         </div>
       </section>
@@ -89,7 +121,18 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {t.about.skillsTitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-skillsTitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.about.skillsTitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.h2>
           
           <motion.div
@@ -115,6 +158,80 @@ const About = () => {
         </div>
       </section>
 
+      <section className={styles.projects}>
+        <div className={styles.container}>
+          <motion.h2 
+            className={styles.sectionTitle}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-projectsTitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.about.otherProjectsTitle}
+              </motion.span>
+            </AnimatePresence>
+          </motion.h2>
+          <motion.div
+            className={styles.projectsLinks}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <a
+              href="https://alexmaxeven.github.io/psyhologist/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>🧠</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>Psychologist</span>
+                <span className={styles.projectSubtitle}>Gestalt Therapy Project</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
+
+            <a
+              href="https://alexmaxeven.github.io/mikrotik/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>🌐</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>MikroTik</span>
+                <span className={styles.projectSubtitle}>Network Configuration Tool</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
+
+            <a
+              href="https://github.com/AlexMaxeven"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>💻</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>GitHub</span>
+                <span className={styles.projectSubtitle}>View my repositories</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
       <section className={styles.experience}>
         <div className={styles.container}>
           <motion.h2 
@@ -124,7 +241,18 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {t.about.experienceTitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-experienceTitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.about.experienceTitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.h2>
 
           <div className={styles.timeline}>
@@ -151,21 +279,68 @@ const About = () => {
                 >
                   <div className={styles.jobHeader}>
                     <div>
-                      <h3 className={styles.jobTitle}>{job.title}</h3>
-                      <p className={styles.jobCompany}>{job.company}</p>
+                      <h3 className={styles.jobTitle}>
+                        <AnimatePresence mode="wait">
+                          <motion.span
+                            key={`${language}-job-${index}-title`}
+                            initial={{ opacity: 0, y: 5 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -5 }}
+                            transition={{ duration: 0.25 }}
+                            style={{ display: 'inline-block' }}
+                          >
+                            {job.title}
+                          </motion.span>
+                        </AnimatePresence>
+                      </h3>
+                      <p className={styles.jobCompany}>
+                        <AnimatePresence mode="wait">
+                          <motion.span
+                            key={`${language}-job-${index}-company`}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            {job.company}
+                          </motion.span>
+                        </AnimatePresence>
+                      </p>
                     </div>
-                    <span className={styles.jobPeriod}>{job.period}</span>
+                    <span className={styles.jobPeriod}>
+                      <AnimatePresence mode="wait">
+                        <motion.span
+                          key={`${language}-job-${index}-period`}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {job.period}
+                        </motion.span>
+                      </AnimatePresence>
+                    </span>
                   </div>
                   <ul className={styles.jobList}>
                     {job.tasks.map((task, taskIndex) => (
                       <motion.li 
-                        key={taskIndex}
+                        key={`${language}-job-${index}-task-${taskIndex}`}
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 + taskIndex * 0.05 }}
                       >
-                        {task}
+                        <AnimatePresence mode="wait">
+                          <motion.span
+                            key={`${language}-task-${taskIndex}`}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            {task}
+                          </motion.span>
+                        </AnimatePresence>
                       </motion.li>
                     ))}
                   </ul>

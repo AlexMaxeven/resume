@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { translations } from '../../translations';
 import styles from './Home.module.css';
@@ -99,7 +99,17 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.3 }}
               >
-                {t.home.label}
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={`${language}-label`}
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -5 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    {t.home.label}
+                  </motion.span>
+                </AnimatePresence>
               </motion.span>
               <motion.h1 
                 className={styles.name}
@@ -107,7 +117,18 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.4 }}
               >
-                {t.home.name}
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={`${language}-name`}
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -5 }}
+                    transition={{ duration: 0.25 }}
+                    style={{ display: 'inline-block' }}
+                  >
+                    {t.home.name}
+                  </motion.span>
+                </AnimatePresence>
               </motion.h1>
               <motion.p 
                 className={styles.position}
@@ -115,8 +136,19 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.5 }}
               >
-                {t.home.position}
-                <span className={styles.positionSub}>{t.home.positionSub}</span>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={`${language}-position`}
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -5 }}
+                    transition={{ duration: 0.25 }}
+                    style={{ display: 'inline-block' }}
+                  >
+                    {t.home.position}
+                    <span className={styles.positionSub}>{t.home.positionSub}</span>
+                  </motion.span>
+                </AnimatePresence>
               </motion.p>
               
               <motion.div 
@@ -127,19 +159,59 @@ const Home = () => {
               >
                 <div className={styles.contactItem}>
                   <span className={styles.contactIcon}>📍</span>
-                  <span>{t.home.location}</span>
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={`${language}-location`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {t.home.location}
+                    </motion.span>
+                  </AnimatePresence>
                 </div>
                 <div className={styles.contactItem}>
                   <span className={styles.contactIcon}>📧</span>
-                  <span>{t.home.email}</span>
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={`${language}-email`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {t.home.email}
+                    </motion.span>
+                  </AnimatePresence>
                 </div>
                 <div className={styles.contactItem}>
                   <span className={styles.contactIcon}>📞</span>
-                  <span>{t.home.phone}</span>
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={`${language}-phone`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {t.home.phone}
+                    </motion.span>
+                  </AnimatePresence>
                 </div>
                 <div className={styles.contactItem}>
                   <span className={styles.contactIcon}>🎂</span>
-                  <span>{t.home.birthday}</span>
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={`${language}-birthday`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {t.home.birthday}
+                    </motion.span>
+                  </AnimatePresence>
                 </div>
               </motion.div>
             </div>
@@ -156,7 +228,18 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {t.home.aboutMe}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-aboutMe`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.home.aboutMe}
+              </motion.span>
+            </AnimatePresence>
           </motion.h2>
           <div className={styles.aboutContent}>
             <motion.p 
@@ -165,24 +248,54 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              dangerouslySetInnerHTML={{ __html: t.home.aboutText1 }}
-            />
+            >
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={`${language}-aboutText1`}
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.25 }}
+                  dangerouslySetInnerHTML={{ __html: t.home.aboutText1 }}
+                />
+              </AnimatePresence>
+            </motion.p>
             <motion.p 
               className={styles.aboutText}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              dangerouslySetInnerHTML={{ __html: t.home.aboutText2 }}
-            />
+            >
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={`${language}-aboutText2`}
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.25 }}
+                  dangerouslySetInnerHTML={{ __html: t.home.aboutText2 }}
+                />
+              </AnimatePresence>
+            </motion.p>
             <motion.p 
               className={styles.aboutText}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              dangerouslySetInnerHTML={{ __html: t.home.aboutText3 }}
-            />
+            >
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={`${language}-aboutText3`}
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.25 }}
+                  dangerouslySetInnerHTML={{ __html: t.home.aboutText3 }}
+                />
+              </AnimatePresence>
+            </motion.p>
             <motion.p 
               className={styles.aboutText}
               initial={{ opacity: 0, y: 20 }}
@@ -190,7 +303,17 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              {t.home.aboutText4}
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={`${language}-aboutText4`}
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  {t.home.aboutText4}
+                </motion.span>
+              </AnimatePresence>
             </motion.p>
             <motion.p 
               className={styles.aboutHighlight}
@@ -200,7 +323,17 @@ const Home = () => {
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               <span className={styles.highlightIcon}>🇺🇦</span>
-              {t.home.aboutHighlight}
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={`${language}-aboutHighlight`}
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  {t.home.aboutHighlight}
+                </motion.span>
+              </AnimatePresence>
             </motion.p>
 
             <motion.div
@@ -210,7 +343,17 @@ const Home = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               <Link to="/about" className={styles.moreBtn}>
-                {t.home.moreBtn}
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={`${language}-moreBtn`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {t.home.moreBtn}
+                  </motion.span>
+                </AnimatePresence>
               </Link>
             </motion.div>
           </div>
@@ -226,7 +369,18 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {t.home.skillsTitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-skillsTitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.home.skillsTitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.h2>
           
           <motion.div
@@ -248,6 +402,81 @@ const Home = () => {
               particleCount={10}
               glowColor="45, 212, 191"
             />
+          </motion.div>
+        </div>
+      </section>
+
+      <section className={styles.projects}>
+        <div className={styles.container}>
+          <motion.h2 
+            className={styles.sectionTitle}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-otherProjectsTitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.home.otherProjectsTitle}
+              </motion.span>
+            </AnimatePresence>
+          </motion.h2>
+          
+          <motion.div
+            className={styles.projectsLinks}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <a
+              href="https://alexmaxeven.github.io/psyhologist/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>🧠</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>Psychologist</span>
+                <span className={styles.projectSubtitle}>Gestalt Therapy Project</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
+
+            <a
+              href="https://alexmaxeven.github.io/mikrotik/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>🌐</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>MikroTik</span>
+                <span className={styles.projectSubtitle}>Network Configuration Tool</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
+
+            <a
+              href="https://github.com/AlexMaxeven"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>💻</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>GitHub</span>
+                <span className={styles.projectSubtitle}>View my repositories</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
           </motion.div>
         </div>
       </section>

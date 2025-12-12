@@ -26,6 +26,7 @@ export const translations = {
       aboutHighlight: 'Літо 2025 року — військовослужбовець.',
       moreBtn: 'Детальніше про досвід →',
       skillsTitle: 'Ключові навички',
+      otherProjectsTitle: 'Інші мої роботи',
       skills: {
         frontend: {
           title: 'Frontend',
@@ -59,6 +60,7 @@ export const translations = {
       title: 'Досвід та навички',
       subtitle: 'Технічний стек та професійний шлях',
       skillsTitle: 'Технічні навички',
+      otherProjectsTitle: 'Інші мої роботи',
       experienceTitle: 'Досвід роботи',
       skillCategories: {
         frontend: {
@@ -401,6 +403,7 @@ export const translations = {
       aboutHighlight: 'Summer 2025 — military serviceman.',
       moreBtn: 'Learn more about experience →',
       skillsTitle: 'Key Skills',
+      otherProjectsTitle: 'My Other Projects',
       skills: {
         frontend: {
           title: 'Frontend',
@@ -434,6 +437,7 @@ export const translations = {
       title: 'Experience & Skills',
       subtitle: 'Tech stack and professional path',
       skillsTitle: 'Technical Skills',
+      otherProjectsTitle: 'My Other Projects',
       experienceTitle: 'Work Experience',
       skillCategories: {
         frontend: {

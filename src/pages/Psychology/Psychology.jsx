@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { translations } from '../../translations';
 import styles from './Psychology.module.css';
@@ -54,7 +54,17 @@ const Psychology = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {t.psychology.label}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-label`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+              >
+                {t.psychology.label}
+              </motion.span>
+            </AnimatePresence>
           </motion.span>
           <motion.h1 
             className={styles.title}
@@ -62,7 +72,18 @@ const Psychology = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            {t.psychology.title}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-title`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.psychology.title}
+              </motion.span>
+            </AnimatePresence>
           </motion.h1>
           <motion.p 
             className={styles.subtitle}
@@ -70,7 +91,18 @@ const Psychology = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            {t.psychology.subtitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-subtitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.psychology.subtitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.p>
           <motion.p 
             className={styles.description}
@@ -78,7 +110,18 @@ const Psychology = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            {t.psychology.description}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-description`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.psychology.description}
+              </motion.span>
+            </AnimatePresence>
           </motion.p>
         </div>
       </section>
@@ -93,7 +136,18 @@ const Psychology = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {t.psychology.directionsTitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-directionsTitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.psychology.directionsTitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.h2>
           
           <motion.div
@@ -130,11 +184,34 @@ const Psychology = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className={styles.categoryTitle}>{directionsDetailed.personal.title}</h3>
+            <h3 className={styles.categoryTitle}>
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={`${language}-personal-title`}
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.25 }}
+                  style={{ display: 'inline-block' }}
+                >
+                  {directionsDetailed.personal.title}
+                </motion.span>
+              </AnimatePresence>
+            </h3>
             <ul className={styles.categoryList}>
               {directionsDetailed.personal.items.map((item, idx) => (
                 <li key={idx} className={styles.categoryItem}>
-                  {item}
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={`${language}-personal-${idx}`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {item}
+                    </motion.span>
+                  </AnimatePresence>
                 </li>
               ))}
             </ul>
@@ -148,11 +225,34 @@ const Psychology = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h3 className={styles.categoryTitle}>{directionsDetailed.triads.title}</h3>
+            <h3 className={styles.categoryTitle}>
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={`${language}-triads-title`}
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.25 }}
+                  style={{ display: 'inline-block' }}
+                >
+                  {directionsDetailed.triads.title}
+                </motion.span>
+              </AnimatePresence>
+            </h3>
             <ul className={styles.categoryList}>
               {directionsDetailed.triads.items.map((item, idx) => (
                 <li key={idx} className={styles.categoryItem}>
-                  {item}
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={`${language}-triads-${idx}`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {item}
+                    </motion.span>
+                  </AnimatePresence>
                 </li>
               ))}
             </ul>
@@ -166,11 +266,34 @@ const Psychology = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <h3 className={styles.categoryTitle}>{directionsDetailed.group.title}</h3>
+            <h3 className={styles.categoryTitle}>
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={`${language}-group-title`}
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.25 }}
+                  style={{ display: 'inline-block' }}
+                >
+                  {directionsDetailed.group.title}
+                </motion.span>
+              </AnimatePresence>
+            </h3>
             <ul className={styles.categoryList}>
               {directionsDetailed.group.items.map((item, idx) => (
                 <li key={idx} className={styles.categoryItem}>
-                  {item}
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={`${language}-group-${idx}`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {item}
+                    </motion.span>
+                  </AnimatePresence>
                 </li>
               ))}
             </ul>
@@ -184,11 +307,34 @@ const Psychology = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <h3 className={styles.categoryTitle}>{directionsDetailed.education.title}</h3>
+            <h3 className={styles.categoryTitle}>
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={`${language}-education-title`}
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.25 }}
+                  style={{ display: 'inline-block' }}
+                >
+                  {directionsDetailed.education.title}
+                </motion.span>
+              </AnimatePresence>
+            </h3>
             <ul className={styles.categoryList}>
               {directionsDetailed.education.items.map((item, idx) => (
                 <li key={idx} className={styles.categoryItem}>
-                  {item}
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={`${language}-education-${idx}`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {item}
+                    </motion.span>
+                  </AnimatePresence>
                 </li>
               ))}
             </ul>
@@ -206,7 +352,18 @@ const Psychology = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {t.psychology.booksTitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-booksTitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.psychology.booksTitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.h2>
           
           <motion.ul

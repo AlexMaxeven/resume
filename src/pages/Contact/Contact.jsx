@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { translations } from '../../translations';
 import styles from './Contact.module.css';
@@ -65,7 +65,17 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {t.contact.label}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-label`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+              >
+                {t.contact.label}
+              </motion.span>
+            </AnimatePresence>
           </motion.span>
           <motion.h1 
             className={styles.title}
@@ -73,7 +83,18 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            {t.contact.title}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-title`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.contact.title}
+              </motion.span>
+            </AnimatePresence>
           </motion.h1>
           <motion.p 
             className={styles.subtitle}
@@ -81,7 +102,18 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            {t.contact.subtitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-subtitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.contact.subtitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.p>
         </div>
       </section>
@@ -95,7 +127,18 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {t.contact.educationTitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-educationTitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.contact.educationTitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.h2>
           
           <motion.div
@@ -130,7 +173,18 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {t.contact.developmentTitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-developmentTitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.contact.developmentTitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.h2>
           
           <motion.div
@@ -165,7 +219,18 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {t.contact.languagesTitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-languagesTitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.contact.languagesTitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.h2>
           
           <motion.div
@@ -200,7 +265,18 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {t.contact.qualitiesTitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-qualitiesTitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.contact.qualitiesTitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.h2>
           
           <motion.div 
@@ -253,7 +329,18 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {t.contact.contactsTitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-contactsTitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.contact.contactsTitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.h2>
           
           <motion.div

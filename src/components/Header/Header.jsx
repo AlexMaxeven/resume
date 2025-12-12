@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { translations } from '../../translations';
 import styles from './Header.module.css';
@@ -53,6 +54,7 @@ const Header = () => {
             textAlign="left"
             tag="span"
           />
+          <span className={styles.logoShort}>O.Z</span>
         </NavLink>
 
         <div className={styles.rightControls}>
@@ -92,7 +94,17 @@ const Header = () => {
             }
             onClick={closeMenu}
           >
-            {t.nav.resume}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-resume`}
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                {t.nav.resume}
+              </motion.span>
+            </AnimatePresence>
           </NavLink>
           <NavLink 
             to="/about" 
@@ -101,7 +113,17 @@ const Header = () => {
             }
             onClick={closeMenu}
           >
-            {t.nav.experience}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-experience`}
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                {t.nav.experience}
+              </motion.span>
+            </AnimatePresence>
           </NavLink>
           <NavLink 
             to="/contact" 
@@ -110,7 +132,17 @@ const Header = () => {
             }
             onClick={closeMenu}
           >
-            {t.nav.education}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-education`}
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                {t.nav.education}
+              </motion.span>
+            </AnimatePresence>
           </NavLink>
           <NavLink 
             to="/kali" 
@@ -119,7 +151,17 @@ const Header = () => {
             }
             onClick={closeMenu}
           >
-            {t.nav.kali}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-kali`}
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                {t.nav.kali}
+              </motion.span>
+            </AnimatePresence>
           </NavLink>
           <NavLink 
             to="/psychology" 
@@ -128,7 +170,17 @@ const Header = () => {
             }
             onClick={closeMenu}
           >
-            {t.nav.psychology}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-psychology`}
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                {t.nav.psychology}
+              </motion.span>
+            </AnimatePresence>
           </NavLink>
         </nav>
       </div>

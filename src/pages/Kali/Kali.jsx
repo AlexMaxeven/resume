@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { translations } from '../../translations';
 import styles from './Kali.module.css';
@@ -58,7 +58,17 @@ const Kali = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {t.kali.label}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-label`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+              >
+                {t.kali.label}
+              </motion.span>
+            </AnimatePresence>
           </motion.span>
           <motion.h1 
             className={styles.title}
@@ -66,7 +76,18 @@ const Kali = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            {t.kali.title}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-title`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.kali.title}
+              </motion.span>
+            </AnimatePresence>
           </motion.h1>
           <motion.p 
             className={styles.subtitle}
@@ -74,7 +95,18 @@ const Kali = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            {t.kali.subtitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-subtitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.kali.subtitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.p>
           <motion.p 
             className={styles.description}
@@ -82,7 +114,18 @@ const Kali = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            {t.kali.description}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-description`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.kali.description}
+              </motion.span>
+            </AnimatePresence>
           </motion.p>
         </div>
       </section>
@@ -97,7 +140,18 @@ const Kali = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {t.kali.competenciesTitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-competenciesTitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.kali.competenciesTitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.h2>
           
           <motion.div
@@ -133,7 +187,18 @@ const Kali = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {t.kali.toolsTitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-toolsTitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.kali.toolsTitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.h2>
           
           <motion.div
@@ -166,55 +231,170 @@ const Kali = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <div className={styles.toolCategory}>
-              <h3 className={styles.categoryTitle}>{toolsDetailed.scanning.title}</h3>
+              <h3 className={styles.categoryTitle}>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={`${language}-scanning-title`}
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -5 }}
+                    transition={{ duration: 0.25 }}
+                    style={{ display: 'inline-block' }}
+                  >
+                    {toolsDetailed.scanning.title}
+                  </motion.span>
+                </AnimatePresence>
+              </h3>
               <ul className={styles.toolList}>
                 {toolsDetailed.scanning.tools.map((tool, idx) => (
                   <li key={idx} className={styles.toolItem}>
-                    <strong>{tool.name}</strong> — {tool.desc}
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={`${language}-scanning-${idx}`}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <strong>{tool.name}</strong> — {tool.desc}
+                      </motion.span>
+                    </AnimatePresence>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className={styles.toolCategory}>
-              <h3 className={styles.categoryTitle}>{toolsDetailed.vulnerabilities.title}</h3>
+              <h3 className={styles.categoryTitle}>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={`${language}-vulnerabilities-title`}
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -5 }}
+                    transition={{ duration: 0.25 }}
+                    style={{ display: 'inline-block' }}
+                  >
+                    {toolsDetailed.vulnerabilities.title}
+                  </motion.span>
+                </AnimatePresence>
+              </h3>
               <ul className={styles.toolList}>
                 {toolsDetailed.vulnerabilities.tools.map((tool, idx) => (
                   <li key={idx} className={styles.toolItem}>
-                    <strong>{tool.name}</strong> — {tool.desc}
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={`${language}-vulnerabilities-${idx}`}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <strong>{tool.name}</strong> — {tool.desc}
+                      </motion.span>
+                    </AnimatePresence>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className={styles.toolCategory}>
-              <h3 className={styles.categoryTitle}>{toolsDetailed.pentesting.title}</h3>
+              <h3 className={styles.categoryTitle}>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={`${language}-pentesting-title`}
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -5 }}
+                    transition={{ duration: 0.25 }}
+                    style={{ display: 'inline-block' }}
+                  >
+                    {toolsDetailed.pentesting.title}
+                  </motion.span>
+                </AnimatePresence>
+              </h3>
               <ul className={styles.toolList}>
                 {toolsDetailed.pentesting.tools.map((tool, idx) => (
                   <li key={idx} className={styles.toolItem}>
-                    <strong>{tool.name}</strong> — {tool.desc}
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={`${language}-pentesting-${idx}`}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <strong>{tool.name}</strong> — {tool.desc}
+                      </motion.span>
+                    </AnimatePresence>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className={styles.toolCategory}>
-              <h3 className={styles.categoryTitle}>{toolsDetailed.traffic.title}</h3>
+              <h3 className={styles.categoryTitle}>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={`${language}-traffic-title`}
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -5 }}
+                    transition={{ duration: 0.25 }}
+                    style={{ display: 'inline-block' }}
+                  >
+                    {toolsDetailed.traffic.title}
+                  </motion.span>
+                </AnimatePresence>
+              </h3>
               <ul className={styles.toolList}>
                 {toolsDetailed.traffic.tools.map((tool, idx) => (
                   <li key={idx} className={styles.toolItem}>
-                    <strong>{tool.name}</strong> — {tool.desc}
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={`${language}-traffic-${idx}`}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <strong>{tool.name}</strong> — {tool.desc}
+                      </motion.span>
+                    </AnimatePresence>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className={styles.toolCategory}>
-              <h3 className={styles.categoryTitle}>{toolsDetailed.osint.title}</h3>
+              <h3 className={styles.categoryTitle}>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={`${language}-osint-title`}
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -5 }}
+                    transition={{ duration: 0.25 }}
+                    style={{ display: 'inline-block' }}
+                  >
+                    {toolsDetailed.osint.title}
+                  </motion.span>
+                </AnimatePresence>
+              </h3>
               <ul className={styles.toolList}>
                 {toolsDetailed.osint.tools.map((tool, idx) => (
                   <li key={idx} className={styles.toolItem}>
-                    <strong>{tool.name}</strong> — {tool.desc}
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={`${language}-osint-${idx}`}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <strong>{tool.name}</strong> — {tool.desc}
+                      </motion.span>
+                    </AnimatePresence>
                   </li>
                 ))}
               </ul>
@@ -233,7 +413,18 @@ const Kali = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {t.kali.skillsTitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-skillsTitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.kali.skillsTitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.h2>
           
           <motion.ul
@@ -245,14 +436,24 @@ const Kali = () => {
           >
             {practicalSkills.map((skill, index) => (
               <motion.li
-                key={index}
+                key={`${language}-skill-${index}`}
                 className={styles.skillItem}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
               >
-                {skill}
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={`${language}-skill-text-${index}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {skill}
+                  </motion.span>
+                </AnimatePresence>
               </motion.li>
             ))}
           </motion.ul>
@@ -269,7 +470,18 @@ const Kali = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {t.kali.learningTitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-learningTitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.kali.learningTitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.h2>
           
           <motion.ul
@@ -281,14 +493,24 @@ const Kali = () => {
           >
             {learning.map((item, index) => (
               <motion.li
-                key={index}
+                key={`${language}-learning-${index}`}
                 className={styles.learningItem}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
               >
-                {item}
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={`${language}-learning-text-${index}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {item}
+                  </motion.span>
+                </AnimatePresence>
               </motion.li>
             ))}
           </motion.ul>
@@ -305,7 +527,18 @@ const Kali = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {t.kali.goalsTitle}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-goalsTitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.kali.goalsTitle}
+              </motion.span>
+            </AnimatePresence>
           </motion.h2>
           
           <motion.div
@@ -336,7 +569,18 @@ const Kali = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            {t.kali.goalText}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-goalText`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.25 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.kali.goalText}
+              </motion.span>
+            </AnimatePresence>
           </motion.p>
         </div>
       </section>
