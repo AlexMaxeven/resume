@@ -87,6 +87,7 @@
   position: relative;
   overflow: hidden;
   transform: translateY(0);
+  cursor: pointer;
 }
 
 .projectLink::before {

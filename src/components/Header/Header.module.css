@@ -26,6 +26,7 @@
   flex-shrink: 1;
   min-width: 0;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .logoText {
@@ -66,6 +67,7 @@
   text-transform: uppercase;
   padding: 0.5rem 0;
   transition: color 0.3s ease;
+  cursor: pointer;
 }
 
 .link::after {
@@ -180,42 +182,96 @@
 /* Burger Menu */
 .burger {
   display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
+  position: relative;
   width: 44px;
   height: 44px;
   background: transparent;
   border: none;
   cursor: pointer;
   z-index: 1001;
-  padding: 10px;
+  padding: 0;
+  flex-shrink: 0;
+  overflow: visible;
 }
 
 .burgerLine {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: block;
   width: 24px;
   height: 2px;
-  background: #fff;
+  background: linear-gradient(90deg, #2dd4bf, #fff, #2dd4bf);
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: all 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  transform-origin: center;
+  will-change: transform, opacity, width, top, bottom;
+  box-shadow: 0 0 4px rgba(45, 212, 191, 0.3);
+}
+
+.burgerLine:nth-child(1) {
+  top: 12px;
+  transition: all 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6) 0.05s;
+}
+
+.burgerLine:nth-child(2) {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6) 0.1s;
+}
+
+.burgerLine:nth-child(3) {
+  bottom: 12px;
+  transition: all 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6) 0.05s;
+}
+
+.burger:hover .burgerLine:nth-child(1) {
+  transform: translateX(-50%) scaleX(1.15);
+  background: linear-gradient(90deg, #34e0cd, #fff, #34e0cd);
+  box-shadow: 0 0 8px rgba(45, 212, 191, 0.5);
+}
+
+.burger:hover .burgerLine:nth-child(2) {
+  transform: translate(-50%, -50%) scaleX(1.15);
+  background: linear-gradient(90deg, #34e0cd, #fff, #34e0cd);
+  box-shadow: 0 0 8px rgba(45, 212, 191, 0.5);
+}
+
+.burger:hover .burgerLine:nth-child(3) {
+  transform: translateX(-50%) scaleX(1.15);
+  background: linear-gradient(90deg, #34e0cd, #fff, #34e0cd);
+  box-shadow: 0 0 8px rgba(45, 212, 191, 0.5);
 }
 
 .burgerActive .burgerLine:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
+  top: 50%;
+  width: 24px;
+  transform: translate(-50%, -50%) rotate(135deg) scale(1.1);
+  background: linear-gradient(135deg, #2dd4bf, #14b8a6);
+  box-shadow: 0 0 12px rgba(45, 212, 191, 0.6);
+  transition: all 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6) 0.1s;
 }
 
 .burgerActive .burgerLine:nth-child(2) {
   opacity: 0;
+  transform: translate(-50%, -50%) scale(0) rotate(90deg);
+  width: 0;
+  transition: all 0.35s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 
 .burgerActive .burgerLine:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  bottom: auto;
+  top: 50%;
+  width: 24px;
+  transform: translate(-50%, -50%) rotate(45deg) scale(1.1);
+  background: linear-gradient(135deg, #2dd4bf, #14b8a6);
+  box-shadow: 0 0 12px rgba(45, 212, 191, 0.6);
+  transition: all 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6) 0.1s;
 }
 
 .overlay {
   display: none;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -237,14 +293,37 @@
   }
 
   .burger {
-    display: flex;
+    display: block;
     width: 40px;
     height: 40px;
-    padding: 8px;
   }
 
   .burgerLine {
     width: 20px;
+    background: #2dd4bf;
+  }
+
+  .burgerLine:nth-child(1) {
+    top: 10px;
+  }
+
+  .burgerLine:nth-child(2) {
+    background: #2dd4bf;
+  }
+
+  .burgerLine:nth-child(3) {
+    bottom: 10px;
+  }
+
+  .burger:hover .burgerLine:nth-child(1),
+  .burger:hover .burgerLine:nth-child(2),
+  .burger:hover .burgerLine:nth-child(3) {
+    background: #34e0cd;
+  }
+
+  .burgerActive .burgerLine:nth-child(1),
+  .burgerActive .burgerLine:nth-child(3) {
+    background: #2dd4bf;
   }
 
   .languageSwitcher {
@@ -330,11 +409,34 @@
   .burger {
     width: 36px;
     height: 36px;
-    padding: 7px;
   }
 
   .burgerLine {
     width: 18px;
+    background: #2dd4bf;
+  }
+
+  .burgerLine:nth-child(1) {
+    top: 9px;
+  }
+
+  .burgerLine:nth-child(2) {
+    background: #2dd4bf;
+  }
+
+  .burgerLine:nth-child(3) {
+    bottom: 9px;
+  }
+
+  .burger:hover .burgerLine:nth-child(1),
+  .burger:hover .burgerLine:nth-child(2),
+  .burger:hover .burgerLine:nth-child(3) {
+    background: #34e0cd;
+  }
+
+  .burgerActive .burgerLine:nth-child(1),
+  .burgerActive .burgerLine:nth-child(3) {
+    background: #2dd4bf;
   }
 
   .languageSwitcher {
@@ -385,11 +487,34 @@
   .burger {
     width: 34px;
     height: 34px;
-    padding: 6px;
   }
 
   .burgerLine {
     width: 16px;
+    background: #2dd4bf;
+  }
+
+  .burgerLine:nth-child(1) {
+    top: 8px;
+  }
+
+  .burgerLine:nth-child(2) {
+    background: #2dd4bf;
+  }
+
+  .burgerLine:nth-child(3) {
+    bottom: 8px;
+  }
+
+  .burger:hover .burgerLine:nth-child(1),
+  .burger:hover .burgerLine:nth-child(2),
+  .burger:hover .burgerLine:nth-child(3) {
+    background: #34e0cd;
+  }
+
+  .burgerActive .burgerLine:nth-child(1),
+  .burgerActive .burgerLine:nth-child(3) {
+    background: #2dd4bf;
   }
 
   .langButton {

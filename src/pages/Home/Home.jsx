@@ -1,15 +1,18 @@
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { translations } from '../../translations';
 import styles from './Home.module.css';
 import alexPhoto from '../../assets/alex.png';
+import alexPhoto2 from '../../assets/alex2.png';
 import MagicBento from '../../components/MagicBento/MagicBento';
 import Particles from '../../components/Particles/Particles';
 
 const Home = () => {
   const { language } = useLanguage();
   const t = translations[language];
+  const [isFlipped, setIsFlipped] = useState(false);
 
   const skills = [
     {
@@ -85,11 +88,27 @@ const Home = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <img 
-                src={alexPhoto} 
-                alt="Заверюха Олександр Вікторович" 
-                className={styles.photo}
-              />
+              <div 
+                className={`${styles.photoFlip} ${isFlipped ? styles.photoFlipped : ''}`}
+                onClick={() => setIsFlipped(!isFlipped)}
+              >
+                <div className={styles.photoFront}>
+                  <img 
+                    key="alex-front"
+                    src={alexPhoto} 
+                    alt="Заверюха Олександр Вікторович" 
+                    className={styles.photo}
+                  />
+                </div>
+                <div className={styles.photoBack}>
+                  <img 
+                    key="alex-back"
+                    src={alexPhoto2} 
+                    alt="Заверюха Олександр Вікторович" 
+                    className={styles.photo}
+                  />
+                </div>
+              </div>
             </motion.div>
             
             <div className={styles.info}>
