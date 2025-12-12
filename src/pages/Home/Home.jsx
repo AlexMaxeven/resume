@@ -96,7 +96,7 @@ const Home = () => {
                   <img 
                     key="alex-front"
                     src={alexPhoto} 
-                    alt="Заверюха Олександр Вікторович" 
+                    alt="Заверюха Олександр" 
                     className={styles.photo}
                   />
                 </div>
@@ -104,7 +104,7 @@ const Home = () => {
                   <img 
                     key="alex-back"
                     src={alexPhoto2} 
-                    alt="Заверюха Олександр Вікторович" 
+                    alt="Заверюха Олександр" 
                     className={styles.photo}
                   />
                 </div>

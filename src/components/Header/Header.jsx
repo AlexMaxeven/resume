@@ -11,20 +11,23 @@ const Header = () => {
   const t = translations[language];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Блокуємо скрол сторінки, коли меню відкрито
+  // Блокуємо скрол сторінки та додаємо blur, коли меню відкрито
   useEffect(() => {
     if (isMenuOpen) {
       document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
+      document.body.classList.add('menu-open');
     } else {
       document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
+      document.body.classList.remove('menu-open');
     }
 
     // Очищаємо при розмонтуванні
     return () => {
       document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
+      document.body.classList.remove('menu-open');
     };
   }, [isMenuOpen]);
 
@@ -86,7 +89,9 @@ const Header = () => {
           </button>
         </div>
         
-        <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
+        <nav 
+          className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}
+        >
           <NavLink 
             to="/" 
             className={({ isActive }) => 

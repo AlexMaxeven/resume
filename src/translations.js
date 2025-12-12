@@ -11,7 +11,7 @@ export const translations = {
     // Home
     home: {
       label: 'Резюме',
-      name: 'Заверюха Олександр Вікторович',
+      name: 'Заверюха Олександр',
       position: 'IT & Network Specialist',
       positionSub: '(Frontend / MikroTik / Security)',
       location: 'Україна, Київ',

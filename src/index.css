@@ -94,3 +94,16 @@ h1, h2, h3, h4, h5, h6 {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
+
+/* Blur page content when menu is open */
+body.menu-open main {
+  filter: blur(8px);
+  transition: filter 0.3s ease;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  body.menu-open main {
+    filter: blur(6px);
+  }
+}
