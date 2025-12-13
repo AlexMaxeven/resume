@@ -13,8 +13,14 @@ export const useLanguage = () => {
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(() => {
     // Зберігаємо вибір мови в localStorage
+    // При першому відкритті завжди українська мова
     const savedLanguage = localStorage.getItem('language');
-    return savedLanguage || 'uk';
+    // Перевіряємо, чи збережена мова валідна (тільки 'uk' або 'en')
+    if (savedLanguage === 'uk' || savedLanguage === 'en') {
+      return savedLanguage;
+    }
+    // Якщо немає збереженої мови або вона невалідна - за замовчуванням українська
+    return 'uk';
   });
 
   useEffect(() => {
