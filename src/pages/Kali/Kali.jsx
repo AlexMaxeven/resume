@@ -4,6 +4,7 @@ import { translations } from '../../translations';
 import styles from './Kali.module.css';
 import LiquidEther from '../../components/LiquidEther/LiquidEther';
 import MagicBento from '../../components/MagicBento/MagicBento';
+import ContactForm from '../../components/ContactForm/ContactForm';
 
 const Kali = () => {
   const { language } = useLanguage();
@@ -582,6 +583,20 @@ const Kali = () => {
               </motion.span>
             </AnimatePresence>
           </motion.p>
+        </div>
+      </section>
+
+      {/* Демонстрація захисту */}
+      <section className={styles.contactFormSection}>
+        <div className={styles.container}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <ContactForm />
+          </motion.div>
         </div>
       </section>
     </div>

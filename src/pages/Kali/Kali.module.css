@@ -295,6 +295,21 @@
   text-align: center;
 }
 
+/* Contact Form Section */
+.contactFormSection {
+  padding: 4rem 0 5rem;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.4) 10%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.4) 90%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  position: relative;
+  z-index: 1;
+}
+
 @media (max-width: 768px) {
   .hero {
     padding: 4rem 0 3rem;
@@ -316,7 +331,8 @@
   .tools,
   .skills,
   .learning,
-  .goals {
+  .goals,
+  .contactFormSection {
     padding: 3rem 0;
   }
 
@@ -392,7 +408,8 @@
   .tools,
   .skills,
   .learning,
-  .goals {
+  .goals,
+  .contactFormSection {
     padding: 2rem 0;
   }
 
