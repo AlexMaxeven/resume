@@ -484,6 +484,20 @@ const Home = () => {
             </a>
 
             <a
+              href="https://alexmaxeven.github.io/kali/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>🛡️</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>Kali Security Lab</span>
+                <span className={styles.projectSubtitle}>Security Testing Environment</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
+
+            <a
               href="https://github.com/AlexMaxeven"
               target="_blank"
               rel="noopener noreferrer"
