@@ -1,4 +1,4 @@
-# 💼 Резюме-сайт Олександра Заверюхи
+# 💼 Резюме-сайт
 
 Сучасний інтерактивний веб-сайт-резюме з анімаціями та захистом від XSS/CSRF атак.
 
@@ -80,36 +80,9 @@ my-app/
 └── README.md                # Цей файл
 ```
 
-## 🚀 Встановлення залежностей
-
-```bash
-npm install
-```
-
-## 🚀 Запуск dev-сервера
-
-```bash
-npm run dev
-```
-
-Відкрийте [http://localhost:5173](http://localhost:5173) у браузері.
-
-## 🚀 Збірка для продакшн
-
-```bash
-npm run build
-```
-
 ## 📦 Основні залежності
 
 - react, react-dom, react-router-dom
 - framer-motion, gsap, @gsap/react
 - three, ogl
 - dompurify
-
-## 📝 Скрипти
-
-- `npm run dev` - Dev-сервер
-- `npm run build` - Збірка
-- `npm run preview` - Перегляд
-- `npm run deploy` - Деплой

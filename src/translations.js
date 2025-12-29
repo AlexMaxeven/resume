@@ -15,9 +15,9 @@ export const translations = {
       position: 'IT & Network Specialist',
       positionSub: '(Frontend / MikroTik / Security)',
       location: 'Україна, Київ',
-      email: 'ax.zaver****@gmail.com',
-      phone: '063 034 ** **',
-      birthday: '18 жовтня 1993',
+      email: 'a*.z*****@g***.com',
+      phone: '*** *** ** **',
+      birthday: '1993',
       aboutMe: 'Про мене',
       aboutText1: 'Фронтенд-розробник із понад <strong>3,5 роками комерційного досвіду</strong>, включно з півроку в ролі тімліда команди з 10 осіб. Спеціалізуюся на створенні вебінтерфейсів на JavaScript, React.js, Vite, Tailwind, інтеграції з трекінговими платформами (Binom, Keitaro, StatCounter) та оптимізації продуктивності клієнтських застосунків.',
       aboutText2: 'Маю практичний досвід роботи з мережевими рішеннями <strong>MikroTik</strong> — налаштування маршрутів, резервних каналів, VPN і базових схем захисту.',
@@ -175,11 +175,11 @@ export const translations = {
       contacts: {
         email: {
           title: 'Email',
-          description: 'ax.zaver****@gmail.com'
+          description: 'a*.z*****@g***.com'
         },
         phone: {
           title: 'Телефон',
-          description: '063 034 ** **'
+          description: '*** *** ** **'
         },
         location: {
           title: 'Локація',
@@ -392,9 +392,9 @@ export const translations = {
       position: 'IT & Network Specialist',
       positionSub: '(Frontend / MikroTik / Security)',
       location: 'Ukraine, Kyiv',
-      email: 'ax.zaver****@gmail.com',
-      phone: '063 034 ** **',
-      birthday: 'October 18, 1993',
+      email: 'a*.z*****@g***.com',
+      phone: '*** *** ** **',
+      birthday: '1993',
       aboutMe: 'About Me',
       aboutText1: 'Frontend developer with over <strong>3.5 years of commercial experience</strong>, including six months as a team lead of a 10-person team. I specialize in creating web interfaces using JavaScript, React.js, Vite, Tailwind, integrating with tracking platforms (Binom, Keitaro, StatCounter), and optimizing client application performance.',
       aboutText2: 'I have practical experience working with <strong>MikroTik</strong> network solutions — configuring routes, backup channels, VPN, and basic security schemes.',
@@ -552,11 +552,11 @@ export const translations = {
       contacts: {
         email: {
           title: 'Email',
-          description: 'ax.zaver****@gmail.com'
+          description: 'a*.z*****@g***.com'
         },
         phone: {
           title: 'Phone',
-          description: '063 034 ** **'
+          description: '*** *** ** **'
         },
         location: {
           title: 'Location',
