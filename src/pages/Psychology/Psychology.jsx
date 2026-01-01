@@ -60,7 +60,7 @@ const Psychology = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
               >
                 {t.psychology.label}
               </motion.span>
@@ -78,7 +78,7 @@ const Psychology = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.psychology.title}
@@ -97,7 +97,7 @@ const Psychology = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.psychology.subtitle}
@@ -116,7 +116,7 @@ const Psychology = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.psychology.description}
@@ -142,7 +142,7 @@ const Psychology = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.psychology.directionsTitle}
@@ -168,6 +168,7 @@ const Psychology = () => {
               spotlightRadius={300}
               particleCount={8}
               glowColor="45, 212, 191"
+              language={language}
             />
           </motion.div>
         </div>
@@ -191,7 +192,7 @@ const Psychology = () => {
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -5 }}
-                  transition={{ duration: 0.25 }}
+                  transition={{ duration: 0.4 }}
                   style={{ display: 'inline-block' }}
                 >
                   {directionsDetailed.personal.title}
@@ -232,7 +233,7 @@ const Psychology = () => {
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -5 }}
-                  transition={{ duration: 0.25 }}
+                  transition={{ duration: 0.4 }}
                   style={{ display: 'inline-block' }}
                 >
                   {directionsDetailed.triads.title}
@@ -273,7 +274,7 @@ const Psychology = () => {
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -5 }}
-                  transition={{ duration: 0.25 }}
+                  transition={{ duration: 0.4 }}
                   style={{ display: 'inline-block' }}
                 >
                   {directionsDetailed.group.title}
@@ -314,7 +315,7 @@ const Psychology = () => {
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -5 }}
-                  transition={{ duration: 0.25 }}
+                  transition={{ duration: 0.4 }}
                   style={{ display: 'inline-block' }}
                 >
                   {directionsDetailed.education.title}
@@ -358,7 +359,7 @@ const Psychology = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.psychology.booksTitle}
@@ -375,14 +376,24 @@ const Psychology = () => {
           >
             {books.map((book, index) => (
               <motion.li
-                key={index}
+                key={`${language}-book-${index}`}
                 className={styles.bookItem}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
               >
-                {book}
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={`${language}-book-text-${index}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    {book}
+                  </motion.span>
+                </AnimatePresence>
               </motion.li>
             ))}
           </motion.ul>

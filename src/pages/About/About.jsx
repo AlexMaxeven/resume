@@ -65,7 +65,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
               >
                 {t.about.label}
               </motion.span>
@@ -83,7 +83,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.about.title}
@@ -102,7 +102,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.about.subtitle}
@@ -127,7 +127,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.about.skillsTitle}
@@ -153,6 +153,7 @@ const About = () => {
               spotlightRadius={300}
               particleCount={10}
               glowColor="45, 212, 191"
+              language={language}
             />
           </motion.div>
         </div>
@@ -173,7 +174,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.about.otherProjectsTitle}
@@ -261,7 +262,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.about.experienceTitle}
@@ -300,7 +301,7 @@ const About = () => {
                             initial={{ opacity: 0, y: 5 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -5 }}
-                            transition={{ duration: 0.25 }}
+                            transition={{ duration: 0.4 }}
                             style={{ display: 'inline-block' }}
                           >
                             {job.title}

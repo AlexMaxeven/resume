@@ -124,7 +124,7 @@ const Home = () => {
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -5 }}
-                    transition={{ duration: 0.25 }}
+                    transition={{ duration: 0.4 }}
                   >
                     {t.home.label}
                   </motion.span>
@@ -142,7 +142,7 @@ const Home = () => {
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -5 }}
-                    transition={{ duration: 0.25 }}
+                    transition={{ duration: 0.4 }}
                     style={{ display: 'inline-block' }}
                   >
                     {t.home.name}
@@ -161,7 +161,7 @@ const Home = () => {
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -5 }}
-                    transition={{ duration: 0.25 }}
+                    transition={{ duration: 0.4 }}
                     style={{ display: 'inline-block' }}
                   >
                     {t.home.position}
@@ -420,6 +420,7 @@ const Home = () => {
               spotlightRadius={300}
               particleCount={10}
               glowColor="45, 212, 191"
+              language={language}
             />
           </motion.div>
         </div>

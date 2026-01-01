@@ -1,4 +1,5 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { gsap } from 'gsap';
 import './MagicBento.css';
 
@@ -372,7 +373,8 @@ const MagicBento = ({
   enableTilt = true,
   glowColor = DEFAULT_GLOW_COLOR,
   clickEffect = true,
-  enableMagnetism = true
+  enableMagnetism = true,
+  language = 'uk'
 }) => {
   const gridRef = useRef(null);
   const isMobile = useMobileDetection();
@@ -399,7 +401,7 @@ const MagicBento = ({
 
           return (
             <ParticleCard
-              key={index}
+              key={`${language}-${index}`}
               className={baseClassName}
               style={cardStyle}
               disableAnimations={shouldDisableAnimations}
@@ -411,11 +413,51 @@ const MagicBento = ({
             >
               <div className="magic-bento-card__header">
                 {card.icon && <div className="magic-bento-card__icon">{card.icon}</div>}
-                {card.label && <div className="magic-bento-card__label">{card.label}</div>}
+                {card.label && (
+                  <div className="magic-bento-card__label">
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={`${language}-label-${index}`}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.4 }}
+                      >
+                        {card.label}
+                      </motion.span>
+                    </AnimatePresence>
+                  </div>
+                )}
               </div>
               <div className="magic-bento-card__content">
-                <h2 className="magic-bento-card__title">{card.title}</h2>
-                <p className="magic-bento-card__description">{card.description}</p>
+                <h2 className="magic-bento-card__title">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={`${language}-title-${index}`}
+                      initial={{ opacity: 0, y: 5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -5 }}
+                      transition={{ duration: 0.4 }}
+                      style={{ display: 'inline-block' }}
+                    >
+                      {card.title}
+                    </motion.span>
+                  </AnimatePresence>
+                </h2>
+                <p className="magic-bento-card__description">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={`${language}-desc-${index}`}
+                      initial={{ opacity: 0, y: 5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -5 }}
+                      transition={{ duration: 0.4 }}
+                      style={{ display: 'inline-block' }}
+                    >
+                      {card.description}
+                    </motion.span>
+                  </AnimatePresence>
+                </p>
               </div>
             </ParticleCard>
           );

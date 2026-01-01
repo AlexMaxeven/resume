@@ -4,6 +4,7 @@
  */
 
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { translations } from '../../translations';
 import { sanitizeHTML, sanitizeText, sanitizeURL, containsDangerousContent } from '../../utils/sanitize';
@@ -132,9 +133,31 @@ const ContactForm = () => {
   return (
     <div className={styles.contactForm}>
       <div className={styles.formHeader}>
-        <h3 className={styles.formTitle}>{t.contactForm.title}</h3>
+        <h3 className={styles.formTitle}>
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={`${language}-title`}
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ duration: 0.4 }}
+            >
+              {t.contactForm.title}
+            </motion.span>
+          </AnimatePresence>
+        </h3>
         <p className={styles.formDescription}>
-          {t.contactForm.description}
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={`${language}-description`}
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ duration: 0.4 }}
+            >
+              {t.contactForm.description}
+            </motion.span>
+          </AnimatePresence>
         </p>
       </div>
 
@@ -144,7 +167,17 @@ const ContactForm = () => {
 
         <div className={styles.formGroup}>
           <label htmlFor="name" className={styles.label}>
-            {t.contactForm.name}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-name-label`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                {t.contactForm.name}
+              </motion.span>
+            </AnimatePresence>
           </label>
           <input
             type="text"
@@ -160,7 +193,17 @@ const ContactForm = () => {
 
         <div className={styles.formGroup}>
           <label htmlFor="email" className={styles.label}>
-            {t.contactForm.email}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-email-label`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                {t.contactForm.email}
+              </motion.span>
+            </AnimatePresence>
           </label>
           <input
             type="email"
@@ -176,10 +219,32 @@ const ContactForm = () => {
 
         <div className={styles.formGroup}>
           <label htmlFor="message" className={styles.label}>
-            {t.contactForm.message}
-            {isDangerous && (
-              <span className={styles.warning}> {t.contactForm.warning}</span>
-            )}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-message-label`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                {t.contactForm.message}
+                {isDangerous && (
+                  <span className={styles.warning}>
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={`${language}-warning`}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.4 }}
+                      >
+                        {' '}{t.contactForm.warning}
+                      </motion.span>
+                    </AnimatePresence>
+                  </span>
+                )}
+              </motion.span>
+            </AnimatePresence>
           </label>
           <textarea
             id="message"
@@ -192,14 +257,36 @@ const ContactForm = () => {
             required
           />
           <small className={styles.hint}>
-            {t.contactForm.hint}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-hint`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                {t.contactForm.hint}
+              </motion.span>
+            </AnimatePresence>
           </small>
         </div>
 
         {/* Попередній перегляд (безпечний) */}
         {preview && (
           <div className={styles.preview}>
-            <h4 className={styles.previewTitle}>{t.contactForm.previewTitle}</h4>
+            <h4 className={styles.previewTitle}>
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={`${language}-previewTitle`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  {t.contactForm.previewTitle}
+                </motion.span>
+              </AnimatePresence>
+            </h4>
             <div className={styles.previewContent}>
               <SafeHTML content={preview} />
             </div>
@@ -214,19 +301,62 @@ const ContactForm = () => {
 
         {submitted && (
           <div className={styles.success}>
-            {t.contactForm.success}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-success`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                {t.contactForm.success}
+              </motion.span>
+            </AnimatePresence>
           </div>
         )}
 
         <button type="submit" className={styles.submitButton}>
-          {t.contactForm.submit}
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={`${language}-submit`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              {t.contactForm.submit}
+            </motion.span>
+          </AnimatePresence>
         </button>
 
         <div className={styles.securityInfo}>
-          <h4 className={styles.securityTitle}>{t.contactForm.securityTitle}</h4>
+          <h4 className={styles.securityTitle}>
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-securityTitle`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                {t.contactForm.securityTitle}
+              </motion.span>
+            </AnimatePresence>
+          </h4>
           <ul className={styles.securityList}>
             {t.contactForm.securityItems.map((item, index) => (
-              <li key={index} dangerouslySetInnerHTML={{ __html: `✅ ${item}` }} />
+              <li key={`${language}-security-${index}`}>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={`${language}-security-item-${index}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                    dangerouslySetInnerHTML={{ __html: `✅ ${item}` }}
+                  />
+                </AnimatePresence>
+              </li>
             ))}
           </ul>
         </div>

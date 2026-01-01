@@ -70,7 +70,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
               >
                 {t.contact.label}
               </motion.span>
@@ -88,7 +88,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.contact.title}
@@ -107,7 +107,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.contact.subtitle}
@@ -132,7 +132,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.contact.educationTitle}
@@ -158,6 +158,7 @@ const Contact = () => {
               spotlightRadius={300}
               particleCount={8}
               glowColor="45, 212, 191"
+              language={language}
             />
           </motion.div>
         </div>
@@ -178,7 +179,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.contact.developmentTitle}
@@ -204,6 +205,7 @@ const Contact = () => {
               spotlightRadius={300}
               particleCount={8}
               glowColor="45, 212, 191"
+              language={language}
             />
           </motion.div>
         </div>
@@ -224,7 +226,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.contact.languagesTitle}
@@ -250,6 +252,7 @@ const Contact = () => {
               spotlightRadius={300}
               particleCount={6}
               glowColor="45, 212, 191"
+              language={language}
             />
           </motion.div>
         </div>
@@ -270,7 +273,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.contact.qualitiesTitle}
@@ -286,18 +289,36 @@ const Contact = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <p className={styles.qualText}>
-              {t.contact.qualitiesText1}
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={`${language}-qualitiesText1`}
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  {t.contact.qualitiesText1}
+                </motion.span>
+              </AnimatePresence>
             </p>
-            <p 
-              className={styles.qualText}
-              dangerouslySetInnerHTML={{ __html: t.contact.qualitiesText2 }}
-            />
+            <p className={styles.qualText}>
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={`${language}-qualitiesText2`}
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.4 }}
+                  dangerouslySetInnerHTML={{ __html: t.contact.qualitiesText2 }}
+                />
+              </AnimatePresence>
+            </p>
           </motion.div>
 
           <div className={styles.qualTags}>
             {qualities.map((quality, index) => (
               <motion.span 
-                key={index}
+                key={`${language}-quality-${index}`}
                 className={styles.qualTag}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -312,7 +333,17 @@ const Contact = () => {
                   transition: { duration: 0.2 }
                 }}
               >
-                {quality}
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={`${language}-quality-text-${index}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    {quality}
+                  </motion.span>
+                </AnimatePresence>
               </motion.span>
             ))}
           </div>
@@ -334,7 +365,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.contact.contactsTitle}
@@ -360,6 +391,7 @@ const Contact = () => {
               spotlightRadius={300}
               particleCount={8}
               glowColor="45, 212, 191"
+              language={language}
             />
           </motion.div>
         </div>

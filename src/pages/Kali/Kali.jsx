@@ -65,7 +65,7 @@ const Kali = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
               >
                 {t.kali.label}
               </motion.span>
@@ -83,7 +83,7 @@ const Kali = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.kali.title}
@@ -102,7 +102,7 @@ const Kali = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.kali.subtitle}
@@ -121,7 +121,7 @@ const Kali = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.kali.description}
@@ -147,7 +147,7 @@ const Kali = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.kali.competenciesTitle}
@@ -173,6 +173,7 @@ const Kali = () => {
               spotlightRadius={300}
               particleCount={8}
               glowColor="45, 212, 191"
+              language={language}
             />
           </motion.div>
         </div>
@@ -194,7 +195,7 @@ const Kali = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.kali.toolsTitle}
@@ -220,6 +221,7 @@ const Kali = () => {
               spotlightRadius={300}
               particleCount={10}
               glowColor="45, 212, 191"
+              language={language}
             />
           </motion.div>
 
@@ -239,7 +241,7 @@ const Kali = () => {
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -5 }}
-                    transition={{ duration: 0.25 }}
+                    transition={{ duration: 0.4 }}
                     style={{ display: 'inline-block' }}
                   >
                     {toolsDetailed.scanning.title}
@@ -273,7 +275,7 @@ const Kali = () => {
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -5 }}
-                    transition={{ duration: 0.25 }}
+                    transition={{ duration: 0.4 }}
                     style={{ display: 'inline-block' }}
                   >
                     {toolsDetailed.vulnerabilities.title}
@@ -307,7 +309,7 @@ const Kali = () => {
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -5 }}
-                    transition={{ duration: 0.25 }}
+                    transition={{ duration: 0.4 }}
                     style={{ display: 'inline-block' }}
                   >
                     {toolsDetailed.pentesting.title}
@@ -341,7 +343,7 @@ const Kali = () => {
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -5 }}
-                    transition={{ duration: 0.25 }}
+                    transition={{ duration: 0.4 }}
                     style={{ display: 'inline-block' }}
                   >
                     {toolsDetailed.traffic.title}
@@ -375,7 +377,7 @@ const Kali = () => {
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -5 }}
-                    transition={{ duration: 0.25 }}
+                    transition={{ duration: 0.4 }}
                     style={{ display: 'inline-block' }}
                   >
                     {toolsDetailed.osint.title}
@@ -420,7 +422,7 @@ const Kali = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.kali.skillsTitle}
@@ -477,7 +479,7 @@ const Kali = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.kali.learningTitle}
@@ -534,7 +536,7 @@ const Kali = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.kali.goalsTitle}
@@ -560,6 +562,7 @@ const Kali = () => {
               spotlightRadius={300}
               particleCount={8}
               glowColor="45, 212, 191"
+              language={language}
             />
           </motion.div>
 
@@ -576,7 +579,7 @@ const Kali = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: 'inline-block' }}
               >
                 {t.kali.goalText}

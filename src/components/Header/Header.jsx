@@ -105,7 +105,7 @@ const Header = () => {
                 initial={{ opacity: 0, y: -5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 5 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.4 }}
               >
                 {t.nav.resume}
               </motion.span>
@@ -124,7 +124,7 @@ const Header = () => {
                 initial={{ opacity: 0, y: -5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 5 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.4 }}
               >
                 {t.nav.experience}
               </motion.span>
@@ -143,7 +143,7 @@ const Header = () => {
                 initial={{ opacity: 0, y: -5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 5 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.4 }}
               >
                 {t.nav.education}
               </motion.span>
@@ -162,7 +162,7 @@ const Header = () => {
                 initial={{ opacity: 0, y: -5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 5 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.4 }}
               >
                 {t.nav.kali}
               </motion.span>
@@ -181,7 +181,7 @@ const Header = () => {
                 initial={{ opacity: 0, y: -5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 5 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.4 }}
               >
                 {t.nav.psychology}
               </motion.span>
