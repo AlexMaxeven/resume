@@ -110,73 +110,130 @@
   display: flex;
   background: rgba(45, 212, 191, 0.08);
   border: 1px solid rgba(45, 212, 191, 0.2);
-  border-radius: 8px;
-  padding: 2px;
-  gap: 2px;
+  border-radius: 10px;
+  padding: 3px;
+  gap: 0;
   position: relative;
-  overflow: visible;
-}
-
-.langButton {
-  background: transparent;
-  border: none;
-  color: rgba(255, 255, 255, 0.5);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  position: relative;
-  z-index: 1;
-  min-width: 44px;
-  text-align: center;
   overflow: hidden;
+  isolation: isolate;
 }
 
-.langButton::before {
+.languageSwitcher::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, #2dd4bf, #14b8a6);
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.1), rgba(20, 184, 166, 0.1));
   opacity: 0;
-  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: -1;
-  border-radius: 6px;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.languageSwitcher:hover::before {
+  opacity: 1;
+}
+
+.slider {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  height: calc(100% - 6px);
+  background: linear-gradient(135deg, #2dd4bf, #14b8a6);
+  border-radius: 8px;
+  z-index: 0;
+  box-shadow: 
+    0 2px 12px rgba(45, 212, 191, 0.4),
+    0 0 0 1px rgba(45, 212, 191, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  filter: blur(0.5px);
+}
+
+.slider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.slider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+.langButton {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 1;
+  min-width: 44px;
+  text-align: center;
+  overflow: visible;
+  transition: color 0.3s ease;
+  perspective: 1000px;
+}
+
+.langButton span {
+  display: inline-block;
+  transform-style: preserve-3d;
 }
 
 .langButton:hover {
-  color: rgba(255, 255, 255, 0.9);
-  transform: translateY(-1px);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .langButton:active {
-  transform: translateY(0);
+  transform: scale(0.98);
 }
 
 .langButtonActive {
   color: #0f0f14;
-  background: linear-gradient(135deg, #2dd4bf, #14b8a6);
-  box-shadow: 0 2px 12px rgba(45, 212, 191, 0.4), 0 0 0 1px rgba(45, 212, 191, 0.1);
-  transform: scale(1.02);
   z-index: 2;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.langButtonActive::before {
-  opacity: 1;
-}
-
-.langButtonActive:hover {
-  color: #0f0f14;
-  background: linear-gradient(135deg, #34e0cd, #1cc9b5);
-  box-shadow: 0 4px 16px rgba(45, 212, 191, 0.5), 0 0 0 1px rgba(45, 212, 191, 0.2);
-  transform: scale(1.05);
+.langButtonActive span {
+  font-weight: 700;
 }
 
 /* Burger Menu */
@@ -331,8 +388,14 @@
   }
 
   .languageSwitcher {
-    padding: 1.5px;
-    gap: 1.5px;
+    padding: 2px;
+  }
+
+  .slider {
+    top: 2px;
+    left: 2px;
+    width: calc(50% - 2px);
+    height: calc(100% - 4px);
   }
 
   .langButton {
@@ -412,6 +475,17 @@
     gap: 0.4rem;
   }
 
+  .languageSwitcher {
+    padding: 2px;
+  }
+
+  .slider {
+    top: 2px;
+    left: 2px;
+    width: calc(50% - 2px);
+    height: calc(100% - 4px);
+  }
+
   .burger {
     width: 36px;
     height: 36px;
@@ -446,8 +520,14 @@
   }
 
   .languageSwitcher {
-    padding: 1px;
-    gap: 1px;
+    padding: 2px;
+  }
+
+  .slider {
+    top: 2px;
+    left: 2px;
+    width: calc(50% - 2px);
+    height: calc(100% - 4px);
   }
 
   .langButton {
@@ -520,6 +600,17 @@
   .burgerActive .burgerLine:nth-child(1),
   .burgerActive .burgerLine:nth-child(3) {
     background: #2dd4bf;
+  }
+
+  .languageSwitcher {
+    padding: 2px;
+  }
+
+  .slider {
+    top: 2px;
+    left: 2px;
+    width: calc(50% - 2px);
+    height: calc(100% - 4px);
   }
 
   .langButton {

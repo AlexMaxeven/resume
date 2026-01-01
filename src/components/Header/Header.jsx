@@ -62,20 +62,50 @@ const Header = () => {
 
         <div className={styles.rightControls}>
           <div className={styles.languageSwitcher}>
-            <button 
+            <motion.div
+              className={styles.slider}
+              initial={false}
+              animate={{
+                x: language === 'uk' ? '0%' : '100%',
+              }}
+              transition={{
+                type: 'spring',
+                stiffness: 300,
+                damping: 30,
+              }}
+            />
+            <motion.button 
               className={`${styles.langButton} ${language === 'uk' ? styles.langButtonActive : ''}`}
               onClick={() => setLanguage('uk')}
               aria-label="Switch to Ukrainian"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              UK
-            </button>
-            <button 
+              <motion.span
+                key={`${language}-uk`}
+                initial={{ opacity: 0, rotateX: -90 }}
+                animate={{ opacity: 1, rotateX: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                UK
+              </motion.span>
+            </motion.button>
+            <motion.button 
               className={`${styles.langButton} ${language === 'en' ? styles.langButtonActive : ''}`}
               onClick={() => setLanguage('en')}
               aria-label="Switch to English"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              EN
-            </button>
+              <motion.span
+                key={`${language}-en`}
+                initial={{ opacity: 0, rotateX: -90 }}
+                animate={{ opacity: 1, rotateX: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                EN
+              </motion.span>
+            </motion.button>
           </div>
 
           <button 
