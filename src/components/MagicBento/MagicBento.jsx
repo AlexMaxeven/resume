@@ -1,5 +1,6 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTheme } from '../../contexts/ThemeContext';
 import { gsap } from 'gsap';
 import './MagicBento.css';
 
@@ -376,6 +377,7 @@ const MagicBento = ({
   enableMagnetism = true,
   language = 'uk'
 }) => {
+  const { theme } = useTheme();
   const gridRef = useRef(null);
   const isMobile = useMobileDetection();
   const shouldDisableAnimations = disableAnimations || isMobile;
@@ -395,7 +397,7 @@ const MagicBento = ({
         {cards.map((card, index) => {
           const baseClassName = `magic-bento-card ${textAutoHide ? 'magic-bento-card--text-autohide' : ''} ${enableBorderGlow ? 'magic-bento-card--border-glow' : ''}`;
           const cardStyle = {
-            backgroundColor: card.color || '#0a0a0f',
+            backgroundColor: card.color || (theme === 'light' ? '#ffffff' : '#0a0a0f'),
             '--glow-color': glowColor
           };
 

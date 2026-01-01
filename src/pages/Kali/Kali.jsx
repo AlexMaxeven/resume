@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { useTheme } from '../../contexts/ThemeContext';
 import { translations } from '../../translations';
 import styles from './Kali.module.css';
 import LiquidEther from '../../components/LiquidEther/LiquidEther';
@@ -8,6 +9,7 @@ import ContactForm from '../../components/ContactForm/ContactForm';
 
 const Kali = () => {
   const { language } = useLanguage();
+  const { theme } = useTheme();
   const t = translations[language];
 
   // Компетенції
@@ -30,26 +32,28 @@ const Kali = () => {
 
   return (
     <div className={styles.kali}>
-      {/* Liquid Ether Background */}
-      <div className={styles.liquidBg}>
-        <LiquidEther
-          colors={['#2dd4bf', '#14b8a6', '#0d9488']}
-          mouseForce={20}
-          cursorSize={100}
-          isViscous={false}
-          viscous={30}
-          iterationsViscous={32}
-          iterationsPoisson={32}
-          resolution={0.5}
-          isBounce={false}
-          autoDemo={true}
-          autoSpeed={0.5}
-          autoIntensity={2.2}
-          takeoverDuration={0.25}
-          autoResumeDelay={3000}
-          autoRampDuration={0.6}
-        />
-      </div>
+      {/* Liquid Ether Background - only on dark theme */}
+      {theme === 'dark' && (
+        <div className={styles.liquidBg}>
+          <LiquidEther
+            colors={['#2dd4bf', '#14b8a6', '#0d9488']}
+            mouseForce={20}
+            cursorSize={100}
+            isViscous={false}
+            viscous={30}
+            iterationsViscous={32}
+            iterationsPoisson={32}
+            resolution={0.5}
+            isBounce={false}
+            autoDemo={true}
+            autoSpeed={0.5}
+            autoIntensity={2.2}
+            takeoverDuration={0.25}
+            autoResumeDelay={3000}
+            autoRampDuration={0.6}
+          />
+        </div>
+      )}
 
       <section className={styles.hero}>
         <div className={styles.container}>

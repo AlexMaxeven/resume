@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { useTheme } from '../../contexts/ThemeContext';
 import { translations } from '../../translations';
 import styles from './Psychology.module.css';
 import LiquidEther from '../../components/LiquidEther/LiquidEther';
@@ -7,6 +8,7 @@ import MagicBento from '../../components/MagicBento/MagicBento';
 
 const Psychology = () => {
   const { language } = useLanguage();
+  const { theme } = useTheme();
   const t = translations[language];
 
   // Напрямки та навички
@@ -25,26 +27,28 @@ const Psychology = () => {
 
   return (
     <div className={styles.psychology}>
-      {/* Liquid Ether Background */}
-      <div className={styles.liquidBg}>
-        <LiquidEther
-          colors={['#2dd4bf', '#14b8a6', '#0d9488']}
-          mouseForce={20}
-          cursorSize={100}
-          isViscous={false}
-          viscous={30}
-          iterationsViscous={32}
-          iterationsPoisson={32}
-          resolution={0.5}
-          isBounce={false}
-          autoDemo={true}
-          autoSpeed={0.5}
-          autoIntensity={2.2}
-          takeoverDuration={0.25}
-          autoResumeDelay={3000}
-          autoRampDuration={0.6}
-        />
-      </div>
+      {/* Liquid Ether Background - only on dark theme */}
+      {theme === 'dark' && (
+        <div className={styles.liquidBg}>
+          <LiquidEther
+            colors={['#2dd4bf', '#14b8a6', '#0d9488']}
+            mouseForce={20}
+            cursorSize={100}
+            isViscous={false}
+            viscous={30}
+            iterationsViscous={32}
+            iterationsPoisson={32}
+            resolution={0.5}
+            isBounce={false}
+            autoDemo={true}
+            autoSpeed={0.5}
+            autoIntensity={2.2}
+            takeoverDuration={0.25}
+            autoResumeDelay={3000}
+            autoRampDuration={0.6}
+          />
+        </div>
+      )}
 
       <section className={styles.hero}>
         <div className={styles.container}>
@@ -374,28 +378,51 @@ const Psychology = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {books.map((book, index) => (
-              <motion.li
-                key={`${language}-book-${index}`}
-                className={styles.bookItem}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-              >
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={`${language}-book-text-${index}`}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    {book}
-                  </motion.span>
-                </AnimatePresence>
-              </motion.li>
-            ))}
+            {books.map((book, index) => {
+              const bookTitle = typeof book === 'string' ? book : book.title;
+              const bookAuthor = typeof book === 'string' ? null : book.author;
+              
+              return (
+                <motion.li
+                  key={`${language}-book-${index}`}
+                  className={styles.bookItem}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={`${language}-book-content-${index}`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.4 }}
+                      style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}
+                    >
+                      <motion.span
+                        key={`${language}-book-title-${index}`}
+                        style={{ fontWeight: 500 }}
+                      >
+                        «{bookTitle}»
+                      </motion.span>
+                      {bookAuthor && (
+                        <motion.span
+                          key={`${language}-book-author-${index}`}
+                          style={{ 
+                            fontSize: '0.9em', 
+                            opacity: 0.8,
+                            fontStyle: 'italic'
+                          }}
+                        >
+                          — {bookAuthor}
+                        </motion.span>
+                      )}
+                    </motion.div>
+                  </AnimatePresence>
+                </motion.li>
+              );
+            })}
           </motion.ul>
         </div>
       </section>

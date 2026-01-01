@@ -247,12 +247,12 @@ export const translations = {
         { icon: '🎓', title: 'Навчання', description: 'Академія психотерапії — трирічна програма підготовки гештальт-практиків' }
       ],
       books: [
-        '«Эго, голод и агрессия» — Фредерік Перлз',
-        '«Путешествие в гештальт»',
-        '«Осознанность или тревога»',
-        '«Управляемое чудо» — Погодін',
-        '«Self в отношениях»',
-        'Книга Лебедевой и Кумача'
+        { title: 'Его, голод і агресія', author: 'Фредерік Перлз' },
+        { title: 'Подорож у гештальт', author: null },
+        { title: 'Усвідомленість або тривога', author: null },
+        { title: 'Кероване диво', author: 'Погодін' },
+        { title: 'Self у стосунках', author: null },
+        { title: 'Гештальт-терапія', author: 'Лебедева та Кумач' }
       ]
     },
     // Kali
@@ -624,12 +624,12 @@ export const translations = {
         { icon: '🎓', title: 'Training', description: 'Psychotherapy Academy — three-year program for training Gestalt practitioners' }
       ],
       books: [
-        '"Ego, Hunger and Aggression" — Frederick Perls',
-        '"Journey into Gestalt"',
-        '"Mindfulness or Anxiety"',
-        '"Managed Miracle" — Pogodin',
-        '"Self in Relationships"',
-        'Book by Lebedeva and Kumach'
+        { title: 'Ego, Hunger and Aggression', author: 'Frederick Perls' },
+        { title: 'Journey into Gestalt', author: null },
+        { title: 'Awareness or Anxiety', author: null },
+        { title: 'The Managed Miracle', author: 'Pogodin' },
+        { title: 'Self in Relationships', author: null },
+        { title: 'Gestalt Therapy', author: 'Lebedeva & Kumach' }
       ]
     },
     // Kali

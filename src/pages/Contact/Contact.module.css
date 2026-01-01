@@ -1,5 +1,12 @@
 .contact {
   position: relative;
+  min-height: 100vh;
+  background: #0a0a0f;
+  transition: background 0.3s ease;
+}
+
+[data-theme="light"] .contact {
+  background: #ffffff;
 }
 
 .liquidBg {
@@ -47,6 +54,11 @@
   color: #fff;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .title {
+  color: #1a1a1a;
 }
 
 .subtitle {
@@ -58,6 +70,10 @@
   margin: 0 auto;
 }
 
+[data-theme="light"] .subtitle {
+  color: #1a1a1a;
+}
+
 .sectionTitle {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
@@ -66,6 +82,11 @@
   margin-bottom: 2rem;
   position: relative;
   display: inline-block;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .sectionTitle {
+  color: #1a1a1a;
 }
 
 .sectionTitle::after {
@@ -92,6 +113,11 @@
   );
   position: relative;
   z-index: 1;
+  transition: background 0.3s ease;
+}
+
+[data-theme="light"] .education {
+  background: #ffffff;
 }
 
 .eduGrid {
@@ -109,13 +135,24 @@
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, background 0.3s ease;
   overflow: hidden;
   cursor: pointer;
 }
 
+[data-theme="light"] .eduCard {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
 .eduCard:hover {
   border-color: rgba(45, 212, 191, 0.3);
+}
+
+[data-theme="light"] .eduCard:hover {
+  border-color: rgba(13, 148, 136, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .eduCard:hover .eduGlow {
@@ -146,12 +183,22 @@
   font-weight: 600;
   color: #fff;
   margin-bottom: 0.35rem;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .eduTitle {
+  color: #1a1a1a;
 }
 
 .eduPlace {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .eduPlace {
+  color: rgba(0, 0, 0, 0.85);
   line-height: 1.5;
 }
 
@@ -168,6 +215,11 @@
   );
   position: relative;
   z-index: 1;
+  transition: background 0.3s ease;
+}
+
+[data-theme="light"] .development {
+  background: #ffffff;
 }
 
 .devContent {
@@ -187,11 +239,22 @@
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+[data-theme="light"] .devCard {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .devCard:hover {
   border-color: rgba(45, 212, 191, 0.2);
+}
+
+[data-theme="light"] .devCard:hover {
+  border-color: rgba(13, 148, 136, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .devCard:hover .devGlow {
@@ -221,11 +284,21 @@
   font-size: 0.95rem;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .devText {
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .devText strong {
   color: #2dd4bf;
   font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .devText strong {
+  color: #0d9488;
 }
 
 /* Languages Section */
@@ -241,6 +314,11 @@
   );
   position: relative;
   z-index: 1;
+  transition: background 0.3s ease;
+}
+
+[data-theme="light"] .languages {
+  background: #ffffff;
 }
 
 .langGrid {
@@ -262,9 +340,21 @@
   cursor: pointer;
 }
 
+[data-theme="light"] .langCard {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
 .langCard:hover {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(45, 212, 191, 0.3);
+}
+
+[data-theme="light"] .langCard:hover {
+  background: #ffffff;
+  border-color: rgba(13, 148, 136, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .langFlag {
@@ -277,12 +367,22 @@
   font-weight: 600;
   color: #fff;
   margin-bottom: 0.15rem;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .langName {
+  color: #1a1a1a;
 }
 
 .langLevel {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.85rem;
   color: #2dd4bf;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .langLevel {
+  color: #0d9488;
 }
 
 /* Qualities Section */
@@ -298,6 +398,11 @@
   );
   position: relative;
   z-index: 1;
+  transition: background 0.3s ease;
+}
+
+[data-theme="light"] .qualities {
+  background: #ffffff;
 }
 
 .qualContent {
@@ -310,6 +415,11 @@
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .qualText {
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .qualText:last-child {
@@ -319,6 +429,11 @@
 .qualText strong {
   color: #fff;
   font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .qualText strong {
+  color: #1a1a1a;
 }
 
 .qualTags {
@@ -359,6 +474,11 @@
   );
   position: relative;
   z-index: 1;
+  transition: background 0.3s ease;
+}
+
+[data-theme="light"] .contactSection {
+  background: #ffffff;
 }
 
 /* Contact Form Section */
@@ -374,6 +494,10 @@
   );
   position: relative;
   z-index: 1;
+}
+
+[data-theme="light"] .contactFormSection {
+  background: #ffffff !important;
 }
 
 .contactGrid {
@@ -392,13 +516,24 @@
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
   text-decoration: none;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, background 0.3s ease;
   overflow: hidden;
   cursor: pointer;
 }
 
+[data-theme="light"] .contactCard {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
 .contactCard:hover {
   border-color: rgba(45, 212, 191, 0.3);
+}
+
+[data-theme="light"] .contactCard:hover {
+  border-color: rgba(13, 148, 136, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .contactCard:hover .contactGlow {
@@ -439,6 +574,11 @@
   letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.5);
   margin-bottom: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .contactLabel {
+  color: rgba(0, 0, 0, 0.85);
 }
 
 .contactValue {
@@ -446,6 +586,11 @@
   font-size: 0.95rem;
   font-weight: 500;
   color: #fff;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .contactValue {
+  color: #1a1a1a;
 }
 
 @media (max-width: 768px) {

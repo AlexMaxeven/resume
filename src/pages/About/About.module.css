@@ -1,5 +1,12 @@
 .about {
   position: relative;
+  min-height: 100vh;
+  background: #0a0a0f;
+  transition: background 0.3s ease;
+}
+
+[data-theme="light"] .about {
+  background: #ffffff;
 }
 
 .particlesBg {
@@ -47,6 +54,11 @@
   color: #fff;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .title {
+  color: #1a1a1a;
 }
 
 .subtitle {
@@ -56,6 +68,10 @@
   color: rgba(255, 255, 255, 0.6);
   max-width: 500px;
   margin: 0 auto;
+}
+
+[data-theme="light"] .subtitle {
+  color: #1a1a1a;
 }
 
 /* Projects Section */
@@ -88,6 +104,12 @@
   overflow: hidden;
   transform: translateY(0);
   cursor: pointer;
+}
+
+[data-theme="light"] .projectLink {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .projectLink::before {
@@ -168,11 +190,19 @@
   transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+[data-theme="light"] .projectTitle {
+  color: #1a1a1a;
+}
+
 .projectSubtitle {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.5);
   transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="light"] .projectSubtitle {
+  color: rgba(0, 0, 0, 0.85);
 }
 
 .projectLink:hover .projectTitle {
@@ -210,6 +240,11 @@
   );
   position: relative;
   z-index: 1;
+  transition: background 0.3s ease;
+}
+
+[data-theme="light"] .skills {
+  background: #ffffff;
 }
 
 .sectionTitle {
@@ -220,6 +255,11 @@
   margin-bottom: 2rem;
   position: relative;
   display: inline-block;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .sectionTitle {
+  color: #1a1a1a;
 }
 
 .sectionTitle::after {
@@ -246,9 +286,15 @@
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
   padding: 1.5rem;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, background 0.3s ease;
   overflow: hidden;
   cursor: pointer;
+}
+
+[data-theme="light"] .skillCategory {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .skillCategory:hover {
@@ -307,6 +353,11 @@
   );
   position: relative;
   z-index: 1;
+  transition: background 0.3s ease;
+}
+
+[data-theme="light"] .experience {
+  background: #ffffff;
 }
 
 .timeline {
@@ -393,6 +444,11 @@
   font-weight: 600;
   color: #fff;
   margin-bottom: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .jobTitle {
+  color: #1a1a1a;
 }
 
 .jobCompany {
@@ -409,6 +465,12 @@
   padding: 0.35rem 0.75rem;
   background: rgba(45, 212, 191, 0.1);
   border-radius: 6px;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+[data-theme="light"] .jobPeriod {
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(13, 148, 136, 0.15);
 }
 
 .jobList {
@@ -425,6 +487,11 @@
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .jobList li {
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .jobList li:last-child {

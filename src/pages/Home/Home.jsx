@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { useTheme } from '../../contexts/ThemeContext';
 import { translations } from '../../translations';
 import styles from './Home.module.css';
 import alexPhoto from '../../assets/alex.png';
@@ -11,6 +12,7 @@ import Particles from '../../components/Particles/Particles';
 
 const Home = () => {
   const { language } = useLanguage();
+  const { theme } = useTheme();
   const t = translations[language];
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -58,11 +60,11 @@ const Home = () => {
       {/* Particles Background */}
       <div className={styles.particlesBg}>
         <Particles
-          particleColors={['#2dd4bf', '#14b8a6', '#0d9488', '#ffffff']}
-          particleCount={200}
-          particleSpread={10}
+          particleColors={theme === 'light' ? ['#0d9488', '#14b8a6'] : ['#2dd4bf', '#14b8a6', '#0d9488', '#ffffff']}
+          particleCount={theme === 'light' ? 30 : 200}
+          particleSpread={theme === 'light' ? 8 : 10}
           speed={0.1}
-          particleBaseSize={100}
+          particleBaseSize={theme === 'light' ? 50 : 100}
           moveParticlesOnHover={true}
           alphaParticles={false}
           disableRotation={false}
