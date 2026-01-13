@@ -94,8 +94,8 @@
 }
 
 .photoWrapper:hover::before {
-  opacity: 0.7;
-  transform: scale(1.08);
+  opacity: 0;
+  transform: scale(1);
 }
 
 .photoWrapper::after {
@@ -112,7 +112,7 @@
 }
 
 .photoWrapper:hover::after {
-  opacity: 1;
+  opacity: 0;
 }
 
 @keyframes gradientShift {
@@ -129,7 +129,7 @@
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: pointer;
   z-index: 10;
 }
@@ -207,8 +207,7 @@
 .photoWrapper:hover .photoFront .photo {
   border: none;
   box-shadow: 
-    0 16px 60px rgba(0, 0, 0, 0.6),
-    0 0 40px rgba(45, 212, 191, 0.4);
+    0 16px 60px rgba(0, 0, 0, 0.6);
   filter: none;
 }
 
@@ -219,8 +218,7 @@
 .photoWrapper:hover .photoBack .photo {
   border: none;
   box-shadow: 
-    0 16px 60px rgba(0, 0, 0, 0.6),
-    0 0 40px rgba(255, 255, 255, 0.2);
+    0 16px 60px rgba(0, 0, 0, 0.6);
   filter: none;
 }
 
