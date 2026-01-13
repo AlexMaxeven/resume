@@ -5,8 +5,8 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { useTheme } from '../../contexts/ThemeContext';
 import { translations } from '../../translations';
 import styles from './Home.module.css';
-import alexPhoto from '../../assets/alex.png';
-import alexPhoto2 from '../../assets/alex2.png';
+import alexPhoto from '../../assets/Alex_PNG.png';
+import alexPhoto2 from '../../assets/Alex2_PNG.png';
 import MagicBento from '../../components/MagicBento/MagicBento';
 import Particles from '../../components/Particles/Particles';
 
