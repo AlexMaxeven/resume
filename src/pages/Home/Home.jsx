@@ -15,6 +15,8 @@ const Home = () => {
   const { theme } = useTheme();
   const t = translations[language];
   const [isFlipped, setIsFlipped] = useState(false);
+  const [image1Loaded, setImage1Loaded] = useState(false);
+  const [image2Loaded, setImage2Loaded] = useState(false);
 
   const skills = [
     {
@@ -94,20 +96,34 @@ const Home = () => {
                 className={`${styles.photoFlip} ${isFlipped ? styles.photoFlipped : ''}`}
                 onClick={() => setIsFlipped(!isFlipped)}
               >
-                <div className={styles.photoFront}>
+                <div className={`${styles.photoFront} ${image1Loaded ? styles.loaded : ''}`}>
+                  {!image1Loaded && (
+                    <div className={styles.photoPlaceholder}>
+                      <div className={styles.placeholderGradient}></div>
+                      <div className={styles.placeholderShimmer}></div>
+                    </div>
+                  )}
                   <img 
                     key="alex-front"
                     src={alexPhoto} 
                     alt="Заверюха Олександр" 
-                    className={styles.photo}
+                    className={`${styles.photo} ${image1Loaded ? styles.photoLoaded : styles.photoLoading}`}
+                    onLoad={() => setImage1Loaded(true)}
                   />
                 </div>
-                <div className={styles.photoBack}>
+                <div className={`${styles.photoBack} ${image2Loaded ? styles.loaded : ''}`}>
+                  {!image2Loaded && (
+                    <div className={styles.photoPlaceholder}>
+                      <div className={styles.placeholderGradient}></div>
+                      <div className={styles.placeholderShimmer}></div>
+                    </div>
+                  )}
                   <img 
                     key="alex-back"
                     src={alexPhoto2} 
                     alt="Заверюха Олександр" 
-                    className={styles.photo}
+                    className={`${styles.photo} ${image2Loaded ? styles.photoLoaded : styles.photoLoading}`}
+                    onLoad={() => setImage2Loaded(true)}
                   />
                 </div>
               </div>
