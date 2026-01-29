@@ -1,0 +1,99 @@
+.scrollToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #2dd4bf, #14b8a6);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f0f14;
+  box-shadow: 0 4px 20px rgba(45, 212, 191, 0.4),
+              0 0 0 1px rgba(45, 212, 191, 0.1);
+  z-index: 999;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(45, 212, 191, 0.4),
+                0 0 0 1px rgba(45, 212, 191, 0.1);
+  }
+  50% {
+    box-shadow: 0 6px 30px rgba(45, 212, 191, 0.6),
+                0 0 0 2px rgba(45, 212, 191, 0.2);
+  }
+}
+
+.scrollToTop::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.scrollToTop:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.scrollToTop:hover {
+  animation: none;
+  box-shadow: 0 8px 35px rgba(45, 212, 191, 0.7),
+              0 0 0 2px rgba(45, 212, 191, 0.3);
+  background: linear-gradient(135deg, #34e0cd, #1cc9b5);
+}
+
+.scrollToTop:active {
+  transform: scale(0.95);
+}
+
+.scrollToTop svg {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .scrollToTop {
+    width: 48px;
+    height: 48px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    box-shadow: 0 3px 15px rgba(45, 212, 191, 0.35),
+                0 0 0 1px rgba(45, 212, 191, 0.1);
+  }
+
+  .scrollToTop svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .scrollToTop {
+    width: 44px;
+    height: 44px;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .scrollToTop svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
