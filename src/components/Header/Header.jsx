@@ -199,7 +199,7 @@ const Header = () => {
                 </motion.span>
               </AnimatePresence>
             </NavLink>
-            <NavLink 
+            {/* <NavLink 
               to="/kali" 
               className={({ isActive }) => 
                 isActive ? `${styles.link} ${styles.linkActive}` : styles.link
@@ -217,7 +217,7 @@ const Header = () => {
                   {t.nav.kali}
                 </motion.span>
               </AnimatePresence>
-            </NavLink>
+            </NavLink> */}
             <NavLink 
               to="/psychology" 
               className={({ isActive }) => 

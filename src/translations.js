@@ -21,12 +21,12 @@ export const translations = {
       aboutMe: 'Про мене',
       aboutText1: 'Фронтенд-розробник із понад <strong>3,5 роками комерційного досвіду</strong>, включно з півроку в ролі тімліда команди з 10 осіб. Спеціалізуюся на створенні вебінтерфейсів на JavaScript, React.js, Vite, Tailwind, інтеграції з трекінговими платформами (Binom, Keitaro, StatCounter) та оптимізації продуктивності клієнтських застосунків.',
       aboutText2: 'Маю практичний досвід роботи з мережевими рішеннями <strong>MikroTik</strong> — налаштування маршрутів, резервних каналів, VPN і базових схем захисту.',
-      aboutText3: 'Зараз активно розвиваюся у напрямку <strong>кібербезпеки</strong>: знайомлюсь із Kali Linux, принципами безпеки вебзастосунків і технологіями фронтенд-захисту (DOMPurify, XSS/CSRF).',
+      aboutText3: 'Зараз активно розвиваюся у напрямку <strong>React</strong> та <strong>кібербезпеки</strong>: працюю з React.js, розробляю додатки та компоненти. Також знайомлюсь із Kali Linux, принципами безпеки вебзастосунків і технологіями фронтенд-захисту (DOMPurify, XSS/CSRF).',
       aboutText4: 'До повномасштабної війни також три роки навчався психотерапії в академії (гештальт-напрям), що допомогло сформувати навички комунікації, лідерства та роботи з командами.',
       aboutHighlight: 'Літо 2025 року — військовослужбовець.',
       moreBtn: 'Детальніше про досвід →',
       skillsTitle: 'Ключові навички',
-      otherProjectsTitle: 'Інші мої роботи',
+      otherProjectsTitle: 'Частина робіт',
       skills: {
         frontend: {
           title: 'Frontend',
@@ -64,7 +64,7 @@ export const translations = {
       title: 'Досвід та навички',
       subtitle: 'Технічний стек та професійний шлях',
       skillsTitle: 'Технічні навички',
-      otherProjectsTitle: 'Інші мої роботи',
+      otherProjectsTitle: 'Частина робіт',
       experienceTitle: 'Досвід роботи',
       skillCategories: {
         frontend: {
@@ -125,7 +125,7 @@ export const translations = {
             'Налаштування Mangle-правил для базового розподілення трафіку та ресурсів',
             'Створення та обслуговування VPS MikroTik-сервера',
             'Моніторинг мережі через Netwatch, автоматичне перемикання маршрутів',
-            'Налаштування firewall-правил, VPN-каналів (WireGuard, L2TP), DHCP',
+            'Налаштування firewall-правил, VPN-каналів (WireGuard, L2TP), DHCP, створення ip-site',
             'Робота з Starlink: активація через додаток, налаштування шлюзу, тестування з\'єднання',
             'Робота з Garmin навігаторами (прошивка, мапи, налаштування)',
             'Налаштування та підтримка акаунтів Кропива',
@@ -404,12 +404,12 @@ export const translations = {
       aboutMe: 'About Me',
       aboutText1: 'Frontend developer with over <strong>3.5 years of commercial experience</strong>, including six months as a team lead of a 10-person team. I specialize in creating web interfaces using JavaScript, React.js, Vite, Tailwind, integrating with tracking platforms (Binom, Keitaro, StatCounter), and optimizing client application performance.',
       aboutText2: 'I have practical experience working with <strong>MikroTik</strong> network solutions — configuring routes, backup channels, VPN, and basic security schemes.',
-      aboutText3: 'Currently actively developing in the field of <strong>cybersecurity</strong>: learning Kali Linux, web application security principles, and frontend protection technologies (DOMPurify, XSS/CSRF).',
+      aboutText3: 'Currently actively developing in the field of <strong>React</strong> and <strong>cybersecurity</strong>: working with React.js, developing applications and components. Also learning Kali Linux, web application security principles, and frontend protection technologies (DOMPurify, XSS/CSRF).',
       aboutText4: 'Before the full-scale war, I also studied psychotherapy for three years at an academy (Gestalt approach), which helped me develop communication, leadership, and team management skills.',
       aboutHighlight: 'Summer 2025 — military serviceman.',
       moreBtn: 'Learn more about experience →',
       skillsTitle: 'Key Skills',
-      otherProjectsTitle: 'My Other Projects',
+      otherProjectsTitle: 'Part of Works',
       skills: {
         frontend: {
           title: 'Frontend',
@@ -447,7 +447,7 @@ export const translations = {
       title: 'Experience & Skills',
       subtitle: 'Tech stack and professional path',
       skillsTitle: 'Technical Skills',
-      otherProjectsTitle: 'My Other Projects',
+      otherProjectsTitle: 'Part of Works',
       experienceTitle: 'Work Experience',
       skillCategories: {
         frontend: {
@@ -508,7 +508,7 @@ export const translations = {
             'Configuring Mangle rules for basic traffic and resource distribution',
             'Creating and maintaining VPS MikroTik server',
             'Network monitoring via Netwatch, automatic route switching',
-            'Configuring firewall rules, VPN channels (WireGuard, L2TP), DHCP',
+            'Configuring firewall rules, VPN channels (WireGuard, L2TP), DHCP, creating ip-site',
             'Working with Starlink: activation via app, gateway configuration, connection testing',
             'Working with Garmin navigators (firmware, maps, configuration)',
             'Configuration and maintenance of Kropyva accounts',

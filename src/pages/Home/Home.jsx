@@ -523,6 +523,20 @@ const Home = () => {
             </a>
 
             <a
+              href="https://alexmaxeven.github.io/todo-react/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>✅</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>Todo React</span>
+                <span className={styles.projectSubtitle}>Task Management App</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
+
+            <a
               href="https://github.com/AlexMaxeven"
               target="_blank"
               rel="noopener noreferrer"
