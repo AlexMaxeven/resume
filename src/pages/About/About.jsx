@@ -190,48 +190,22 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
+            {/* 1. GitHub */}
             <a
-              href="https://alexmaxeven.github.io/psyhologist/"
+              href="https://github.com/AlexMaxeven"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.projectLink}
             >
-              <span className={styles.projectIcon}>🧠</span>
+              <span className={styles.projectIcon}>💻</span>
               <span className={styles.projectText}>
-                <span className={styles.projectTitle}>Psychologist</span>
-                <span className={styles.projectSubtitle}>Gestalt Therapy Project</span>
+                <span className={styles.projectTitle}>GitHub</span>
+                <span className={styles.projectSubtitle}>View my repositories</span>
               </span>
               <span className={styles.projectArrow}>→</span>
             </a>
 
-            <a
-              href="https://alexmaxeven.github.io/mikrotik/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.projectLink}
-            >
-              <span className={styles.projectIcon}>🌐</span>
-              <span className={styles.projectText}>
-                <span className={styles.projectTitle}>MikroTik</span>
-                <span className={styles.projectSubtitle}>Network Configuration Tool</span>
-              </span>
-              <span className={styles.projectArrow}>→</span>
-            </a>
-
-            <a
-              href="https://alexmaxeven.github.io/kali/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.projectLink}
-            >
-              <span className={styles.projectIcon}>🛡️</span>
-              <span className={styles.projectText}>
-                <span className={styles.projectTitle}>Kali Security Lab</span>
-                <span className={styles.projectSubtitle}>Security Testing Environment</span>
-              </span>
-              <span className={styles.projectArrow}>→</span>
-            </a>
-
+            {/* 2. Todo React */}
             <a
               href="https://alexmaxeven.github.io/todo-react/"
               target="_blank"
@@ -246,16 +220,47 @@ const About = () => {
               <span className={styles.projectArrow}>→</span>
             </a>
 
+            {/* 3. Kali */}
             <a
-              href="https://github.com/AlexMaxeven"
+              href="https://alexmaxeven.github.io/kali/"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.projectLink}
             >
-              <span className={styles.projectIcon}>💻</span>
+              <span className={styles.projectIcon}>🛡️</span>
               <span className={styles.projectText}>
-                <span className={styles.projectTitle}>GitHub</span>
-                <span className={styles.projectSubtitle}>View my repositories</span>
+                <span className={styles.projectTitle}>Kali Security Lab</span>
+                <span className={styles.projectSubtitle}>Security Testing Environment</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
+
+            {/* 4. MikroTik */}
+            <a
+              href="https://alexmaxeven.github.io/mikrotik/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>🌐</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>MikroTik</span>
+                <span className={styles.projectSubtitle}>Network Configuration Tool</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
+
+            {/* 5. Psychology */}
+            <a
+              href="https://alexmaxeven.github.io/psyhologist/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>🧠</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>Psychologist</span>
+                <span className={styles.projectSubtitle}>Gestalt Therapy Project</span>
               </span>
               <span className={styles.projectArrow}>→</span>
             </a>
