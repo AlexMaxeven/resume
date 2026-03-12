@@ -161,113 +161,6 @@ const About = () => {
         </div>
       </section>
 
-      <section className={styles.projects}>
-        <div className={styles.container}>
-          <motion.h2 
-            className={styles.sectionTitle}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={`${language}-projectsTitle`}
-                initial={{ opacity: 0, y: 5 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.4 }}
-                style={{ display: 'inline-block' }}
-              >
-                {t.about.otherProjectsTitle}
-              </motion.span>
-            </AnimatePresence>
-          </motion.h2>
-          <motion.div
-            className={styles.projectsLinks}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            {/* 1. GitHub */}
-            <a
-              href="https://github.com/AlexMaxeven"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.projectLink}
-            >
-              <span className={styles.projectIcon}>💻</span>
-              <span className={styles.projectText}>
-                <span className={styles.projectTitle}>GitHub</span>
-                <span className={styles.projectSubtitle}>View my repositories</span>
-              </span>
-              <span className={styles.projectArrow}>→</span>
-            </a>
-
-            {/* 2. Todo React */}
-            <a
-              href="https://alexmaxeven.github.io/todo-react/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.projectLink}
-            >
-              <span className={styles.projectIcon}>✅</span>
-              <span className={styles.projectText}>
-                <span className={styles.projectTitle}>Todo React</span>
-                <span className={styles.projectSubtitle}>Task Management App</span>
-              </span>
-              <span className={styles.projectArrow}>→</span>
-            </a>
-
-            {/* 3. Kali */}
-            <a
-              href="https://alexmaxeven.github.io/kali/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.projectLink}
-            >
-              <span className={styles.projectIcon}>🛡️</span>
-              <span className={styles.projectText}>
-                <span className={styles.projectTitle}>Kali Security Lab</span>
-                <span className={styles.projectSubtitle}>Security Testing Environment</span>
-              </span>
-              <span className={styles.projectArrow}>→</span>
-            </a>
-
-            {/* 4. MikroTik */}
-            <a
-              href="https://alexmaxeven.github.io/mikrotik/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.projectLink}
-            >
-              <span className={styles.projectIcon}>🌐</span>
-              <span className={styles.projectText}>
-                <span className={styles.projectTitle}>MikroTik</span>
-                <span className={styles.projectSubtitle}>Network Configuration Tool</span>
-              </span>
-              <span className={styles.projectArrow}>→</span>
-            </a>
-
-            {/* 5. Psychology */}
-            <a
-              href="https://alexmaxeven.github.io/psyhologist/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.projectLink}
-            >
-              <span className={styles.projectIcon}>🧠</span>
-              <span className={styles.projectText}>
-                <span className={styles.projectTitle}>Psychologist</span>
-                <span className={styles.projectSubtitle}>Gestalt Therapy Project</span>
-              </span>
-              <span className={styles.projectArrow}>→</span>
-            </a>
-          </motion.div>
-        </div>
-      </section>
-
       <section className={styles.experience}>
         <div className={styles.container}>
           <motion.h2 
@@ -385,6 +278,128 @@ const About = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className={styles.projects}>
+        <div className={styles.container}>
+          <motion.h2 
+            className={styles.sectionTitle}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-projectsTitle`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.4 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.about.otherProjectsTitle}
+              </motion.span>
+            </AnimatePresence>
+          </motion.h2>
+          <motion.div
+            className={styles.projectsLinks}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            {/* 1. GitHub */}
+            <a
+              href="https://github.com/AlexMaxeven"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>💻</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>GitHub</span>
+                <span className={styles.projectSubtitle}>View my repositories</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
+
+            {/* 2. Todo React */}
+            <a
+              href="https://alexmaxeven.github.io/todo-react/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>✅</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>Todo React</span>
+                <span className={styles.projectSubtitle}>Task Management App</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
+
+            {/* 3. React + TypeScript Manual */}
+            <a
+              href="https://alexmaxeven.github.io/react-manual/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>📘</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>React + JS</span>
+                <span className={styles.projectSubtitle}>Documentation & Guide</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
+
+            {/* 4. Kali */}
+            <a
+              href="https://alexmaxeven.github.io/kali/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>🛡️</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>Kali Security Lab</span>
+                <span className={styles.projectSubtitle}>Security Testing Environment</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
+
+            {/* 5. MikroTik */}
+            <a
+              href="https://alexmaxeven.github.io/mikrotik/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>🌐</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>MikroTik</span>
+                <span className={styles.projectSubtitle}>Network Configuration Tool</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
+
+            {/* 6. Psychology */}
+            <a
+              href="https://alexmaxeven.github.io/psyhologist/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>🧠</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>Psychologist</span>
+                <span className={styles.projectSubtitle}>Gestalt Therapy Project</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
+          </motion.div>
         </div>
       </section>
     </div>

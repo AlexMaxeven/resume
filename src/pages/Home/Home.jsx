@@ -510,7 +510,22 @@ const Home = () => {
               <span className={styles.projectArrow}>→</span>
             </a>
 
-            {/* 3. Kali */}
+            {/* 3. React + TypeScript Manual */}
+            <a
+              href="https://alexmaxeven.github.io/react-manual/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>📘</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>React + JS</span>
+                <span className={styles.projectSubtitle}>Documentation & Guide</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
+
+            {/* 5. Kali */}
             <a
               href="https://alexmaxeven.github.io/kali/"
               target="_blank"
@@ -525,7 +540,7 @@ const Home = () => {
               <span className={styles.projectArrow}>→</span>
             </a>
 
-            {/* 4. MikroTik */}
+            {/* 6. MikroTik */}
             <a
               href="https://alexmaxeven.github.io/mikrotik/"
               target="_blank"
@@ -540,7 +555,7 @@ const Home = () => {
               <span className={styles.projectArrow}>→</span>
             </a>
 
-            {/* 5. Psychology */}
+            {/* 7. Psychology */}
             <a
               href="https://alexmaxeven.github.io/psyhologist/"
               target="_blank"
