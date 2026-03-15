@@ -325,22 +325,7 @@ const About = () => {
               <span className={styles.projectArrow}>→</span>
             </a>
 
-            {/* 2. Todo React */}
-            <a
-              href="https://alexmaxeven.github.io/todo-react/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.projectLink}
-            >
-              <span className={styles.projectIcon}>✅</span>
-              <span className={styles.projectText}>
-                <span className={styles.projectTitle}>Todo React</span>
-                <span className={styles.projectSubtitle}>Task Management App</span>
-              </span>
-              <span className={styles.projectArrow}>→</span>
-            </a>
-
-            {/* 3. React + TypeScript Manual */}
+            {/* 2. React + JS */}
             <a
               href="https://alexmaxeven.github.io/react-manual/"
               target="_blank"
@@ -351,6 +336,21 @@ const About = () => {
               <span className={styles.projectText}>
                 <span className={styles.projectTitle}>React + JS</span>
                 <span className={styles.projectSubtitle}>Documentation & Guide</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
+
+            {/* 3. Todo React */}
+            <a
+              href="https://alexmaxeven.github.io/todo-react/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>✅</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>Todo React</span>
+                <span className={styles.projectSubtitle}>Task Management App</span>
               </span>
               <span className={styles.projectArrow}>→</span>
             </a>
