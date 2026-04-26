@@ -510,7 +510,22 @@ const Home = () => {
               <span className={styles.projectArrow}>→</span>
             </a>
 
-            {/* 3. Todo React */}
+            {/* 3. Drones Dashboard Map */}
+            <a
+              href="https://alexmaxeven.github.io/drons_dashboard_map/map"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectLink}
+            >
+              <span className={styles.projectIcon}>🗺️</span>
+              <span className={styles.projectText}>
+                <span className={styles.projectTitle}>Drones Dashboard Map</span>
+                <span className={styles.projectSubtitle}>Map Dashboard</span>
+              </span>
+              <span className={styles.projectArrow}>→</span>
+            </a>
+
+            {/* 4. Todo React */}
             <a
               href="https://alexmaxeven.github.io/todo-react/"
               target="_blank"
