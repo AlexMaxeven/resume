@@ -12,14 +12,16 @@ export const translations = {
     home: {
       label: 'Резюме',
       name: '*******а Олександр',
-      position: 'IT & Network Specialist',
-      positionSub: '(Frontend / MikroTik / Security)',
+      position: 'Фронтенд-розробник',
+      positionSub: 'JavaScript · React · Vite · Tailwind CSS',
+      positionAlso: 'також: Webflow · MikroTik · Security',
       location: 'Україна, Київ',
       email: 'a*.z*****@g***.com',
       phone: '*** *** ** **',
       birthday: '1993',
       aboutMe: 'Про мене',
       aboutText1: 'Фронтенд-розробник із понад <strong>3,5 роками комерційного досвіду</strong>, включно з півроку в ролі тімліда команди з 10 осіб. Спеціалізуюся на створенні вебінтерфейсів на JavaScript, React.js, Vite, Tailwind, інтеграції з трекінговими платформами (Binom, Keitaro, StatCounter) та оптимізації продуктивності клієнтських застосунків.',
+      professionalFocus: 'Найбільший професійний інтерес зосереджений на розвитку у сфері web-frontend розробки, зокрема поглибленні експертизи в React, сучасних frontend-технологіях та вивченні нових мов і підходів програмування.',
       aboutText2: 'Маю практичний досвід роботи з мережевими рішеннями <strong>MikroTik</strong> — налаштування маршрутів, резервних каналів, VPN і базових схем захисту.',
       aboutText3: 'Зараз активно розвиваюся у напрямку <strong>React</strong> та <strong>JavaScript</strong>: працюю з React.js та чистим JS, розробляю додатки та компоненти. Базово вивчаю Kali Linux та принципи безпеки вебзастосунків.',
       aboutText4: 'До повномасштабної війни також три роки навчався психотерапії в академії (гештальт-напрям), що допомогло сформувати навички комунікації, лідерства та роботи з командами.',
@@ -30,7 +32,7 @@ export const translations = {
       skills: {
         frontend: {
           title: 'Frontend',
-          description: 'JavaScript, React.js, Vite, Tailwind CSS, Redux, HTML/CSS'
+          description: 'JavaScript, React.js, async/await, Promises, fetch API, Vite, Tailwind CSS, Redux, HTML/CSS'
         },
         mikrotik: {
           title: 'MikroTik',
@@ -63,13 +65,14 @@ export const translations = {
       label: 'Кар\'єра',
       title: 'Досвід та навички',
       subtitle: 'Технічний стек та професійний шлях',
+      professionalFocus: 'Найбільший професійний інтерес зосереджений на розвитку у сфері web-frontend розробки, зокрема поглибленні експертизи в React, сучасних frontend-технологіях та вивченні нових мов і підходів програмування.',
       skillsTitle: 'Технічні навички',
       otherProjectsTitle: 'Частина робіт',
       experienceTitle: 'Досвід роботи',
       skillCategories: {
         frontend: {
           title: 'Frontend',
-          description: 'React.js, JavaScript (ES6+), HTML5, CSS3, Tailwind, Vite, Redux, jQuery, PHP'
+          description: 'React.js, JavaScript (ES6+), async/await, Promises, fetch API, HTML5, CSS3, Tailwind, Vite, Redux, jQuery, PHP'
         },
         integrations: {
           title: 'Інтеграції',
@@ -107,6 +110,7 @@ export const translations = {
           period: '2021 — Літо 2025',
           tasks: [
             'Розробка, оптимізація та підтримка веб-інтерфейсів (React.js, Vite, Tailwind)',
+            'Робота з асинхронним кодом: Promises, async/await, fetch API, обробка паралельних запитів та станів завантаження',
             'Багато проєктів на JavaScript: чистий JS, скрипти, автоматизація, веб-додатки',
             'Створення власних збірок для різних проєктів, інтеграція з Binom, Keitaro, Ecco',
             'Впровадження захисту: обфускація, мініфікація, контроль оточення продакшн-білдів',
@@ -396,14 +400,16 @@ export const translations = {
     home: {
       label: 'Resume',
       name: 'Oleksandr *******a',
-      position: 'IT & Network Specialist',
-      positionSub: '(Frontend / MikroTik / Security)',
+      position: 'Frontend Developer',
+      positionSub: 'JavaScript · React · Vite · Tailwind CSS',
+      positionAlso: 'also: Webflow · MikroTik · Security',
       location: 'Ukraine, Kyiv',
       email: 'a*.z*****@g***.com',
       phone: '*** *** ** **',
       birthday: '1993',
       aboutMe: 'About Me',
       aboutText1: 'Frontend developer with over <strong>3.5 years of commercial experience</strong>, including six months as a team lead of a 10-person team. I specialize in creating web interfaces using JavaScript, React.js, Vite, Tailwind, integrating with tracking platforms (Binom, Keitaro, StatCounter), and optimizing client application performance.',
+      professionalFocus: 'My greatest professional interest is focused on developing in web frontend development, particularly deepening expertise in React, modern frontend technologies, and learning new languages and programming approaches.',
       aboutText2: 'I have practical experience working with <strong>MikroTik</strong> network solutions — configuring routes, backup channels, VPN, and basic security schemes.',
       aboutText3: 'Currently actively developing in <strong>React</strong> and <strong>JavaScript</strong>: working with React.js and vanilla JS, building applications and components. Basic study of Kali Linux and web application security principles.',
       aboutText4: 'Before the full-scale war, I also studied psychotherapy for three years at an academy (Gestalt approach), which helped me develop communication, leadership, and team management skills.',
@@ -414,7 +420,7 @@ export const translations = {
       skills: {
         frontend: {
           title: 'Frontend',
-          description: 'JavaScript, React.js, Vite, Tailwind CSS, Redux, HTML/CSS'
+          description: 'JavaScript, React.js, async/await, Promises, fetch API, Vite, Tailwind CSS, Redux, HTML/CSS'
         },
         mikrotik: {
           title: 'MikroTik',
@@ -447,13 +453,14 @@ export const translations = {
       label: 'Career',
       title: 'Experience & Skills',
       subtitle: 'Tech stack and professional path',
+      professionalFocus: 'My greatest professional interest is focused on developing in web frontend development, particularly deepening expertise in React, modern frontend technologies, and learning new languages and programming approaches.',
       skillsTitle: 'Technical Skills',
       otherProjectsTitle: 'Part of Works',
       experienceTitle: 'Work Experience',
       skillCategories: {
         frontend: {
           title: 'Frontend',
-          description: 'React.js, JavaScript (ES6+), HTML5, CSS3, Tailwind, Vite, Redux, jQuery, PHP'
+          description: 'React.js, JavaScript (ES6+), async/await, Promises, fetch API, HTML5, CSS3, Tailwind, Vite, Redux, jQuery, PHP'
         },
         integrations: {
           title: 'Integrations',
@@ -491,6 +498,7 @@ export const translations = {
           period: '2021 — Summer 2025',
           tasks: [
             'Development, optimization, and maintenance of web interfaces (React.js, Vite, Tailwind)',
+            'Working with asynchronous code: Promises, async/await, fetch API, handling parallel requests and loading states',
             'Many projects in JavaScript: vanilla JS, scripts, automation, web applications',
             'Creating custom builds for various projects, integration with Binom, Keitaro, Ecco',
             'Implementing protection: obfuscation, minification, production build environment control',

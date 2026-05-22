@@ -74,6 +74,24 @@
   color: #1a1a1a;
 }
 
+.professionalFocus {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(45, 212, 191, 0.85);
+  max-width: 640px;
+  margin: 1.25rem auto 0;
+  padding-left: 1rem;
+  border-left: 3px solid rgba(45, 212, 191, 0.45);
+  text-align: left;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="light"] .professionalFocus {
+  color: #0d9488;
+  border-left-color: rgba(13, 148, 136, 0.4);
+}
+
 /* Projects Section */
 .projects {
   padding: 3rem 0;

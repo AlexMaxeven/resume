@@ -111,6 +111,25 @@ const About = () => {
               </motion.span>
             </AnimatePresence>
           </motion.p>
+          <motion.p 
+            className={styles.professionalFocus}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`${language}-professionalFocus`}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.4 }}
+                style={{ display: 'inline-block' }}
+              >
+                {t.about.professionalFocus}
+              </motion.span>
+            </AnimatePresence>
+          </motion.p>
         </div>
       </section>
 

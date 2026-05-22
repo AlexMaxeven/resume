@@ -190,6 +190,7 @@ const Home = () => {
                   >
                     {t.home.position}
                     <span className={styles.positionSub}>{t.home.positionSub}</span>
+                    <span className={styles.positionAlso}>{t.home.positionAlso}</span>
                   </motion.span>
                 </AnimatePresence>
               </motion.p>
@@ -301,6 +302,25 @@ const Home = () => {
                   transition={{ duration: 0.25 }}
                   dangerouslySetInnerHTML={{ __html: t.home.aboutText1 }}
                 />
+              </AnimatePresence>
+            </motion.p>
+            <motion.p 
+              className={styles.professionalFocus}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+            >
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={`${language}-professionalFocus`}
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  {t.home.professionalFocus}
+                </motion.span>
               </AnimatePresence>
             </motion.p>
             <motion.p 
