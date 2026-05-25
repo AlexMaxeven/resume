@@ -4,22 +4,27 @@ import { useTheme } from '../../contexts/ThemeContext';
 import { translations } from '../../translations';
 import styles from './About.module.css';
 import Particles from '../../components/Particles/Particles';
-import MagicBento from '../../components/MagicBento/MagicBento';
 
 const About = () => {
   const { language } = useLanguage();
   const { theme } = useTheme();
   const t = translations[language];
 
-  const skillCategories = [
-    { icon: '⚛️', title: t.about.skillCategories.frontend.title, description: t.about.skillCategories.frontend.description },
-    { icon: '🔗', title: t.about.skillCategories.integrations.title, description: t.about.skillCategories.integrations.description },
-    { icon: '🛡️', title: t.about.skillCategories.codeProtection.title, description: t.about.skillCategories.codeProtection.description },
-    { icon: '🌐', title: t.about.skillCategories.network.title, description: t.about.skillCategories.network.description },
-    { icon: '📡', title: t.about.skillCategories.networkTech.title, description: t.about.skillCategories.networkTech.description },
-    { icon: '🛰️', title: t.about.skillCategories.starlink.title, description: t.about.skillCategories.starlink.description },
-    { icon: '🔧', title: t.about.skillCategories.equipment.title, description: t.about.skillCategories.equipment.description },
-    { icon: '🔐', title: t.about.skillCategories.security.title, description: t.about.skillCategories.security.description }
+  // const skillCategories = [
+  //   { icon: '⚛️', title: t.about.skillCategories.frontend.title, description: t.about.skillCategories.frontend.description },
+  //   { icon: '🔗', title: t.about.skillCategories.integrations.title, description: t.about.skillCategories.integrations.description },
+  //   { icon: '🛡️', title: t.about.skillCategories.codeProtection.title, description: t.about.skillCategories.codeProtection.description },
+  //   { icon: '🌐', title: t.about.skillCategories.network.title, description: t.about.skillCategories.network.description },
+  //   { icon: '📡', title: t.about.skillCategories.networkTech.title, description: t.about.skillCategories.networkTech.description },
+  //   { icon: '🛰️', title: t.about.skillCategories.starlink.title, description: t.about.skillCategories.starlink.description },
+  //   { icon: '🔧', title: t.about.skillCategories.equipment.title, description: t.about.skillCategories.equipment.description },
+  //   { icon: '🔐', title: t.about.skillCategories.security.title, description: t.about.skillCategories.security.description }
+  // ];
+
+  const detailedSkillGroups = [
+    { title: t.about.detailedSkills.hard.title, items: t.about.detailedSkills.hard.items },
+    { title: t.about.detailedSkills.soft.title, items: t.about.detailedSkills.soft.items },
+    { title: t.about.detailedSkills.tools.title, items: t.about.detailedSkills.tools.items }
   ];
 
   const jobs = [
@@ -162,7 +167,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <MagicBento
+            {/* <MagicBento
               cards={skillCategories}
               textAutoHide={true}
               enableStars={true}
@@ -175,7 +180,34 @@ const About = () => {
               particleCount={10}
               glowColor="45, 212, 191"
               language={language}
-            />
+            /> */}
+          </motion.div>
+
+          <motion.div
+            className={styles.skillsSummary}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+          >
+            {detailedSkillGroups.map((group) => (
+              <div
+                key={`${language}-${group.title}`}
+                className={styles.skillsSummaryCard}
+              >
+                <h3 className={styles.skillsSummaryTitle}>{group.title}</h3>
+                <div className={styles.skillsSummaryText}>
+                  {group.items.map((item) => (
+                    <span
+                      key={`${language}-${group.title}-${item}`}
+                      className={styles.skillChip}
+                    >
+                      <span>{item}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </motion.div>
         </div>
       </section>

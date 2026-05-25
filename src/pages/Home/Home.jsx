@@ -21,33 +21,39 @@ const Home = () => {
   const skills = [
     {
       icon: '⚛️',
-      title: t.home.skills.frontend.title,
-      description: t.home.skills.frontend.description,
-      label: 'Dev'
+      title: t.about.skillCategories.frontend.title,
+      description: t.about.skillCategories.frontend.description,
+      label: 'Frontend'
+    },
+    {
+      icon: '🔗',
+      title: t.about.skillCategories.integrations.title,
+      description: t.about.skillCategories.integrations.description,
+      label: 'Integrations'
+    },
+    {
+      icon: '🛡️',
+      title: t.about.skillCategories.codeProtection.title,
+      description: t.about.skillCategories.codeProtection.description,
+      label: 'Protection'
     },
     {
       icon: '🌐',
       title: t.home.skills.mikrotik.title,
       description: t.home.skills.mikrotik.description,
-      label: 'Network'
-    },
-    {
-      icon: '🔐',
-      title: t.home.skills.security.title,
-      description: t.home.skills.security.description,
-      label: 'Cyber'
-    },
-    {
-      icon: '📊',
-      title: t.home.skills.tracking.title,
-      description: t.home.skills.tracking.description,
-      label: 'Analytics'
+      label: 'MikroTik'
     },
     {
       icon: '🛰️',
       title: t.home.skills.starlink.title,
       description: t.home.skills.starlink.description,
       label: 'Satellite'
+    },
+    {
+      icon: '🔐',
+      title: t.home.skills.security.title,
+      description: t.home.skills.security.description,
+      label: 'Security'
     },
     {
       icon: '👥',
@@ -60,6 +66,24 @@ const Home = () => {
       title: t.home.skills.spreadsheets.title,
       description: t.home.skills.spreadsheets.description,
       label: 'Data'
+    },
+    {
+      icon: '🌍',
+      title: t.about.skillCategories.network.title,
+      description: t.about.skillCategories.network.description,
+      label: 'Network'
+    },
+    {
+      icon: '📡',
+      title: t.about.skillCategories.networkTech.title,
+      description: t.about.skillCategories.networkTech.description,
+      label: 'Infra'
+    },
+    {
+      icon: '🔧',
+      title: t.about.skillCategories.equipment.title,
+      description: t.about.skillCategories.equipment.description,
+      label: 'Equipment'
     }
   ];
 

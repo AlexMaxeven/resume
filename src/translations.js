@@ -13,14 +13,14 @@ export const translations = {
       label: 'Резюме',
       name: '*******а Олександр',
       position: 'Фронтенд-розробник',
-      positionSub: 'JavaScript · React · Vite · Tailwind CSS',
+      positionSub: 'JavaScript · React · Vite',
       positionAlso: 'також: Webflow · MikroTik · Security',
       location: 'Україна, Київ',
       email: 'a*.z*****@g***.com',
       phone: '*** *** ** **',
       birthday: '1993',
       aboutMe: 'Про мене',
-      aboutText1: 'Фронтенд-розробник із понад <strong>3,5 роками комерційного досвіду</strong>, включно з півроку в ролі тімліда команди з 10 осіб. Спеціалізуюся на створенні вебінтерфейсів на JavaScript, React.js, Vite, Tailwind, інтеграції з трекінговими платформами (Binom, Keitaro, StatCounter) та оптимізації продуктивності клієнтських застосунків.',
+      aboutText1: 'Фронтенд-розробник із понад <strong>3,5 роками комерційного досвіду</strong>, включно з півроку в ролі тімліда команди з 10 осіб. Спеціалізуюся на створенні вебінтерфейсів на JavaScript, React.js, Vite, інтеграції з трекінговими платформами (Binom, Keitaro, StatCounter) та оптимізації продуктивності клієнтських застосунків.',
       professionalFocus: 'Найбільший професійний інтерес зосереджений на розвитку у сфері web-frontend розробки, зокрема поглибленні експертизи в React, сучасних frontend-технологіях та вивченні нових мов і підходів програмування.',
       aboutText2: 'Маю практичний досвід роботи з мережевими рішеннями <strong>MikroTik</strong> — налаштування маршрутів, резервних каналів, VPN і базових схем захисту.',
       aboutText3: 'Зараз активно розвиваюся у напрямку <strong>React</strong> та <strong>JavaScript</strong>: працюю з React.js та чистим JS, розробляю додатки та компоненти. Базово вивчаю Kali Linux та принципи безпеки вебзастосунків.',
@@ -32,7 +32,7 @@ export const translations = {
       skills: {
         frontend: {
           title: 'Frontend',
-          description: 'JavaScript, React.js, async/await, Promises, fetch API, Vite, Tailwind CSS, Redux, HTML/CSS'
+          description: 'JavaScript, React.js, async/await, Promises, fetch API, Vite, Redux, HTML/CSS'
         },
         mikrotik: {
           title: 'MikroTik',
@@ -67,12 +67,69 @@ export const translations = {
       subtitle: 'Технічний стек та професійний шлях',
       professionalFocus: 'Найбільший професійний інтерес зосереджений на розвитку у сфері web-frontend розробки, зокрема поглибленні експертизи в React, сучасних frontend-технологіях та вивченні нових мов і підходів програмування.',
       skillsTitle: 'Технічні навички',
+      detailedSkills: {
+        hard: {
+          title: 'Hard Skills',
+          items: [
+            'HTML',
+            'CSS',
+            'JavaScript',
+            'jQuery',
+            'Bootstrap',
+            'JSON',
+            'Form validation',
+            'UI/UX Optimization',
+            'CDN',
+            'React.js',
+            'Vite',
+            'Hooks (useState, useEffect, useMemo, custom hooks)',
+            'Promises',
+            'Fetch API',
+            'REST API',
+            'async/await',
+            'Redux',
+            'React Router',
+            'Tailwind CSS',
+            'CSS Modules'
+          ]
+        },
+        soft: {
+          title: 'Soft Skills',
+          items: [
+            'Прагнення до розвитку та швидкого освоєння нових технологій',
+            'Багатозадачність',
+            'Адаптивність',
+            'Вміння працювати в стресових ситуаціях',
+            'Робота на результат',
+            'Комунікація та міжкомандна взаємодія',
+            'Вміння слухати',
+            'Вміння приймати рішення',
+            'Відповідальне ставлення до роботи'
+          ]
+        },
+        tools: {
+          title: 'Tools / Instruments',
+          items: [
+            'Figma',
+            'Keitaro',
+            'GitLab',
+            'Cursor',
+            'GitHub',
+            'Binom',
+            'Chrome DevTools',
+            'Google Sheets',
+            'Google PageSpeed Insights',
+            'StatCounter',
+            'Excel'
+          ]
+        }
+      },
       otherProjectsTitle: 'Частина робіт',
       experienceTitle: 'Досвід роботи',
       skillCategories: {
         frontend: {
           title: 'Frontend',
-          description: 'React.js, JavaScript (ES6+), async/await, Promises, fetch API, HTML5, CSS3, Tailwind, Vite, Redux, jQuery, PHP'
+          description: 'React.js, JavaScript (ES6+), async/await, Promises, fetch API, HTML5, CSS3, Vite, Redux, jQuery, PHP'
         },
         integrations: {
           title: 'Інтеграції',
@@ -109,14 +166,17 @@ export const translations = {
           company: 'IT Studio / Freelance Projects',
           period: '2021 — Літо 2025',
           tasks: [
-            'Розробка, оптимізація та підтримка веб-інтерфейсів (React.js, Vite, Tailwind)',
-            'Робота з асинхронним кодом: Promises, async/await, fetch API, обробка паралельних запитів та станів завантаження',
-            'Багато проєктів на JavaScript: чистий JS, скрипти, автоматизація, веб-додатки',
-            'Створення власних збірок для різних проєктів, інтеграція з Binom, Keitaro, Ecco',
-            'Впровадження захисту: обфускація, мініфікація, контроль оточення продакшн-білдів',
-            'Керування командою до 10 розробників, розподіл завдань, рев\'ю коду',
-            'Оптимізація UI/UX та впровадження базових заходів фронтенд-безпеки',
-            'Робота з таблицями та даними: Google Sheets, Excel, формули, облік та аналіз даних'
+            'Розробка, оптимізація та підтримка веб-інтерфейсів на React.js, JavaScript, Vite, Tailwind CSS',
+            'Робота з асинхронним кодом: Promises, async/await, Fetch API, обробка паралельних запитів, робота зі станами завантаження та помилок',
+            'Розробка веб-додатків, скриптів та автоматизації на JavaScript (Vanilla JS + React ecosystem)',
+            'Створення та підтримка власних production-збірок для різних проєктів, інтеграція з трекінговими системами (Binom, Keitaro, Ecco)',
+            'Впровадження заходів захисту frontend-рішень: обфускація, мініфікація, контроль production-оточення, оптимізація білдів',
+            'Оптимізація продуктивності веб-додатків: аналіз та покращення швидкодії через інструменти на кшталт Google PageSpeed Insights, Lighthouse, Chrome DevTools; зменшення часу завантаження, покращення стабільності та responsiveness веб-сторінок',
+            'Оптимізація UI/UX, підвищення зручності інтерфейсів та впровадження базових практик frontend-безпеки',
+            'Керування командою до 10 розробників: розподіл задач, code review, контроль якості виконання та координація процесів розробки',
+            'Мотивація та розвиток команди: робота з KPI, контроль результативності, онбординг та навчання співробітників, менторинг, розвиток технічних навичок, підтримка залученості та мотивації команди для досягнення результатів',
+            'Робота з таблицями та даними: Google Sheets, Excel, формули, аналітика, облік та обробка даних',
+            'Під час роботи оптимізував процес розробки та продуктивність web-проєктів: проводив аналіз швидкодії через Google PageSpeed Insights, Lighthouse та Chrome DevTools, зменшував час завантаження сторінок, покращував стабільність роботи, responsiveness та загальну продуктивність frontend-рішень, що позитивно впливало на UX і стабільність production-середовища'
           ]
         },
         military: {
@@ -401,14 +461,14 @@ export const translations = {
       label: 'Resume',
       name: 'Oleksandr *******a',
       position: 'Frontend Developer',
-      positionSub: 'JavaScript · React · Vite · Tailwind CSS',
+      positionSub: 'JavaScript · React · Vite',
       positionAlso: 'also: Webflow · MikroTik · Security',
       location: 'Ukraine, Kyiv',
       email: 'a*.z*****@g***.com',
       phone: '*** *** ** **',
       birthday: '1993',
       aboutMe: 'About Me',
-      aboutText1: 'Frontend developer with over <strong>3.5 years of commercial experience</strong>, including six months as a team lead of a 10-person team. I specialize in creating web interfaces using JavaScript, React.js, Vite, Tailwind, integrating with tracking platforms (Binom, Keitaro, StatCounter), and optimizing client application performance.',
+      aboutText1: 'Frontend developer with over <strong>3.5 years of commercial experience</strong>, including six months as a team lead of a 10-person team. I specialize in creating web interfaces using JavaScript, React.js, Vite, integrating with tracking platforms (Binom, Keitaro, StatCounter), and optimizing client application performance.',
       professionalFocus: 'My greatest professional interest is focused on developing in web frontend development, particularly deepening expertise in React, modern frontend technologies, and learning new languages and programming approaches.',
       aboutText2: 'I have practical experience working with <strong>MikroTik</strong> network solutions — configuring routes, backup channels, VPN, and basic security schemes.',
       aboutText3: 'Currently actively developing in <strong>React</strong> and <strong>JavaScript</strong>: working with React.js and vanilla JS, building applications and components. Basic study of Kali Linux and web application security principles.',
@@ -420,7 +480,7 @@ export const translations = {
       skills: {
         frontend: {
           title: 'Frontend',
-          description: 'JavaScript, React.js, async/await, Promises, fetch API, Vite, Tailwind CSS, Redux, HTML/CSS'
+          description: 'JavaScript, React.js, async/await, Promises, fetch API, Vite, Redux, HTML/CSS'
         },
         mikrotik: {
           title: 'MikroTik',
@@ -455,12 +515,69 @@ export const translations = {
       subtitle: 'Tech stack and professional path',
       professionalFocus: 'My greatest professional interest is focused on developing in web frontend development, particularly deepening expertise in React, modern frontend technologies, and learning new languages and programming approaches.',
       skillsTitle: 'Technical Skills',
+      detailedSkills: {
+        hard: {
+          title: 'Hard Skills',
+          items: [
+            'HTML',
+            'CSS',
+            'JavaScript',
+            'jQuery',
+            'Bootstrap',
+            'JSON',
+            'Form validation',
+            'UI/UX Optimization',
+            'CDN',
+            'React.js',
+            'Vite',
+            'Hooks (useState, useEffect, useMemo, custom hooks)',
+            'Promises',
+            'Fetch API',
+            'REST API',
+            'async/await',
+            'Redux',
+            'React Router',
+            'Tailwind CSS',
+            'CSS Modules'
+          ]
+        },
+        soft: {
+          title: 'Soft Skills',
+          items: [
+            'Drive for growth and quick adoption of new technologies',
+            'Multitasking',
+            'Adaptability',
+            'Ability to work under pressure',
+            'Result-oriented mindset',
+            'Communication and cross-team collaboration',
+            'Active listening',
+            'Decision-making',
+            'Strong sense of responsibility'
+          ]
+        },
+        tools: {
+          title: 'Tools / Instruments',
+          items: [
+            'Figma',
+            'Keitaro',
+            'GitLab',
+            'Cursor',
+            'GitHub',
+            'Binom',
+            'Chrome DevTools',
+            'Google Sheets',
+            'Google PageSpeed Insights',
+            'StatCounter',
+            'Excel'
+          ]
+        }
+      },
       otherProjectsTitle: 'Part of Works',
       experienceTitle: 'Work Experience',
       skillCategories: {
         frontend: {
           title: 'Frontend',
-          description: 'React.js, JavaScript (ES6+), async/await, Promises, fetch API, HTML5, CSS3, Tailwind, Vite, Redux, jQuery, PHP'
+          description: 'React.js, JavaScript (ES6+), async/await, Promises, fetch API, HTML5, CSS3, Vite, Redux, jQuery, PHP'
         },
         integrations: {
           title: 'Integrations',
@@ -497,14 +614,17 @@ export const translations = {
           company: 'IT Studio / Freelance Projects',
           period: '2021 — Summer 2025',
           tasks: [
-            'Development, optimization, and maintenance of web interfaces (React.js, Vite, Tailwind)',
-            'Working with asynchronous code: Promises, async/await, fetch API, handling parallel requests and loading states',
-            'Many projects in JavaScript: vanilla JS, scripts, automation, web applications',
-            'Creating custom builds for various projects, integration with Binom, Keitaro, Ecco',
-            'Implementing protection: obfuscation, minification, production build environment control',
-            'Managing a team of up to 10 developers, task distribution, code review',
-            'UI/UX optimization and implementing basic frontend security measures',
-            'Working with spreadsheets and data: Google Sheets, Excel, formulas, accounting and data analysis'
+            'Development, optimization, and maintenance of web interfaces using React.js, JavaScript, Vite, and Tailwind CSS',
+            'Working with asynchronous code: Promises, async/await, Fetch API, handling parallel requests, loading states, and error states',
+            'Developing web applications, scripts, and automation in JavaScript (Vanilla JS + React ecosystem)',
+            'Creating and maintaining custom production builds for various projects, including integration with tracking systems (Binom, Keitaro, Ecco)',
+            'Implementing frontend protection measures: obfuscation, minification, production environment control, and build optimization',
+            'Optimizing web application performance: analyzing and improving speed with Google PageSpeed Insights, Lighthouse, and Chrome DevTools; reducing load times and improving stability and responsiveness',
+            'Optimizing UI/UX, improving interface usability, and implementing basic frontend security practices',
+            'Managing a team of up to 10 developers: task distribution, code review, quality control, and coordination of development processes',
+            'Team motivation and development: working with KPIs, tracking performance, onboarding and training teammates, mentoring, growing technical skills, and maintaining engagement to achieve results',
+            'Working with spreadsheets and data: Google Sheets, Excel, formulas, analytics, accounting, and data processing',
+            'During my work, I optimized development workflows and frontend project performance: used Google PageSpeed Insights, Lighthouse, and Chrome DevTools for performance analysis, reduced page load times, improved stability, responsiveness, and overall frontend efficiency, which had a positive impact on UX and production stability'
           ]
         },
         military: {
